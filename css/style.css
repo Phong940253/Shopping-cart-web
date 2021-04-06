@@ -406,33 +406,34 @@ textarea {
     border-radius: 20px 0px 0px 20px;
 }
 
-.style-login-with-email {
+.style-login {
 
 }
 
-.style-login-with-email .heading {
+.style-login .heading {
     margin: 20px 0px;
     color: rgb(36, 36, 36);
 }
 
-.style-login-with-email .heading h4 {
-    margin: 20px 0px;
-    color: rgb(36, 36, 36);
+.style-login .heading h4 {
+    margin: 0px 0px 10px;
+    font-size: 24px;
+    font-weight: 500;
 }
 
-.style-login-with-email .heading p {
+.style-login .heading p {
     margin: 0px;
     font-size: 15px;
     line-height: 20px;
 }
 
-.style-login-with-email .input {
+.style-login .input {
     position: relative;
     z-index: 1;
     margin-bottom: 15px;
 }
 
-.style-login-with-email .input input {
+.style-login .input input {
     width: 100%;
     padding: 10px 0px;
     border: none;
@@ -441,7 +442,7 @@ textarea {
     outline: none;
 }
 
-.style-login-with-email .input::before {
+.style-login .input::before {
     content: "";
     position: absolute;
     left: 0px;
@@ -450,11 +451,11 @@ textarea {
     border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-.style-login-with-email .input-fill::before {
+.style-login .input-fill::before {
     border-color: rgb(13, 92, 182);
 }
 
-.style-login-with-email .input .show-pass {
+.style-login .input .show-password {
     position: absolute;
     right: 0px;
     top: 10px;
@@ -465,7 +466,18 @@ textarea {
     cursor: pointer;
 }
 
-.style-login-with-email form button {
+.style-login .input .hide-password {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    z-index: 2;
+    color: rgb(13, 92, 182);
+    font-size: 14px;
+    display: none;
+    cursor: pointer;
+}
+
+.style-login form button {
     margin: 26px 0px 10px;
     outline: none;
     border-radius: 4px;
@@ -478,7 +490,7 @@ textarea {
     cursor: pointer;
 }
 
-.style-login-with-email .forgot-pass {
+.style-login .forgot-pass {
     color: rgb(13, 92, 182);
     font-size: 13px;
     margin: 20px 0px 0px;
@@ -486,13 +498,13 @@ textarea {
     display: inline-block;
 }
 
-.style-login-with-email .create-account {
+.style-login .create-account {
     color: rgb(120, 120, 120);
     font-size: 13px;
     margin: 10px 0px 0px;
 }
 
-.style-login-with-email .create-account span {
+.style-login .create-account span {
     color: rgb(13, 92, 182);
     display: inline-block;
     margin-left: 5px;
@@ -529,4 +541,101 @@ textarea {
     font-size: 13px;
     color: rgb(11, 116, 229);
     font-weight: 500;
+}
+
+.style-login .login-with-email {
+    margin: 10px 0px 0px;
+    text-align: center;
+    color: rgb(13, 92, 182);
+    cursor: pointer;
+}
+
+.style-login-with-phone {
+}
+
+.style-login-with-email {
+    display: none;
+}
+
+.style-login .btn-action {
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px 0px 10px;
+    background: transparent;
+    border: none;
+}
+
+.style-login .btn-action img {
+    width: 21px;
+}
+
+.style-social {
+    text-align: center;
+    margin: 80px 0px 0px;
+}
+
+.style-social .social-heading {
+    margin: 0px 0px 15px;
+    position: relative;
+}
+
+.style-social .social-heading span {
+    font-size: 15px;
+    color: rgb(120, 120, 120);
+    display: inline-block;
+    background: rgb(255, 255, 255);
+    padding: 0px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.style-social .social__items {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px 0px 10px;
+    list-style: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.style-social .social__item {
+    margin: 0px 10px;
+}
+
+.style-social .social__item img {
+    width: 58px;
+}
+
+.style-social .note {
+    font-size: 11px;
+    color: rgb(120, 120, 120);
+    text-align: center;
+}
+
+.style-social .note a {
+    display: inline-block;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-size: 11px;
+    color: rgb(120, 120, 120);
+}
+
+.style-login-with-phone .input input {
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    font-size: 24px;
+    color: rgb(36, 36, 36);
+    outline: none;
+}
+
+.style-login-with-phone .input {
+    margin: 0px;
+}
+
+.style-login-with-phone .heading {
+    margin-top: 0px;
 }
