@@ -1,0 +1,9 @@
+{
+    "name": "shopping/cart",
+    "description": "",
+    "keywords": ["shopping"],
+    "license": "MIT",
+    "require": {
+
+    }
+}
