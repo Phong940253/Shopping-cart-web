@@ -14,8 +14,6 @@
     <?php
     include_once './vendor/autoload.php';
     require("./inc/header.php");
-//    $connect = connect_db::getConnection();
-//    connect_db::closeConnection($connect);
     ?>
     <script>
         $(document).ready(function(){
@@ -136,7 +134,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
