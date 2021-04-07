@@ -1,14 +1,14 @@
 <?php
 class DatabaseConnector
 {
-    private $dbConnection = null;
+    public $dbConnection = null;
     public function __construct()
     {
-        $hostName = getenv('DB_HOST');
-        $userName = getenv('DB_USERNAME');
-        $passWord = getenv('DB_PASSWORD');
-        $databaseName = getenv('DB_DATABASE');
-        $port = getenv('DB_PORT');
+        $hostName = "db4free.net";
+        $userName = "phong940253";
+        $passWord = "01676940253";
+        $databaseName = "phong940253";
+        $port = 3306;
         try {
             $this->dbConnection = new mysqli($hostName, $userName, $passWord, $databaseName, $port);
         } catch (\mysqli_sql_exception $e) {

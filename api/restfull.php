@@ -1,4 +1,5 @@
 <?php
+require_once '../vendor/autoload.php';
 class restful_api
 {
     protected $method   = '';
@@ -12,6 +13,7 @@ class restful_api
         header("Content-Type: application/json");
         echo json_encode($data);
         die();
+
     }
     private function _build_http_header_string($status_code)
     {

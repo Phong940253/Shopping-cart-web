@@ -134,6 +134,11 @@
             </div>
         </div>
     </div>
+    <?php
+    include_once "./DatabaseConnector.php";
+    $Database = new DatabaseConnector();
+    echo "connect success";
+    ?>
 </body>
 
 </html>

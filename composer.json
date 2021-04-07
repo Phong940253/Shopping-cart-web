@@ -4,6 +4,6 @@
     "keywords": ["shopping"],
     "license": "MIT",
     "require": {
-
+      "ext-json": "*"
     }
 }
