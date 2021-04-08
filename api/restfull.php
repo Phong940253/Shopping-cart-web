@@ -74,6 +74,7 @@ class restful_api
         header("Access-Control-Allow-Methods: *");
 
         $this->params = explode('/', trim($_SERVER['PATH_INFO'], '/'));
+        echo $this->params;
         $this->endpoint = array_shift($this->params);
 
         $method = $_SERVER['REQUEST_METHOD'];

@@ -4,46 +4,31 @@ html {
         Arial,
         sans-serif;
     font-size: 14px;
-}
-
-body {
+}body {
     margin: 0px;
     line-height: 1.15;
     text-size-adjust: 100%;
-}
-
-body {
+}body {
     overflow-x: hidden;
-}
-
-body {
+}body {
     display: block;
-}
-
-*,
+}*,
 ::before,
 ::after {
     box-sizing: border-box;
-}
-
-a {
+}a {
     text-decoration: none;
-}
-
-img {
+}img {
     max-width: 100%;
 }
-
 .header {
     position: relative;
     background: rgb(1, 127, 255);
     z-index: 999;
 }
-
 .header * {
     letter-spacing: normal;
 }
-
 .container {
     width: 100%;
     padding-left: 4%;
@@ -52,12 +37,10 @@ img {
     margin-left: auto;
 
 }
-
 .bottom_root {
     position: relative;
     z-index: 1;
 }
-
 .middle_wrap {
     display: flex;
     padding: 18px 0px 8px 0px;
@@ -67,15 +50,12 @@ img {
     -webkit-box-align: center;
     align-items: center;
 }
-
 .middle_left_container {
     display: flex;
     flex: 1 1 0%;
     -webkit-box-align: center;
     align-items: center;
 }
-
-
 .logo_menu {
     display: flex;
     align-items: flex-start;
@@ -83,7 +63,6 @@ img {
     flex-shrink: 0;
     padding: 0px 16px 0px 0px;
 }
-
 .style_logo {
     display: flex;
     -webkit-box-pack: justify;
@@ -91,7 +70,6 @@ img {
     flex: 1 1 0%;
     color: rgb(0, 127, 240);
 }
-
 .logo {
     width: 60px;
     height: 40px;
@@ -99,7 +77,6 @@ img {
     font-size: 30px;
     text-decoration: none;
 }
-
 .noselect {
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -115,22 +92,18 @@ img {
     /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-
 .no-underline {
     text-decoration: none;
 }
-
 .form-search-root {
     flex: 1 1 0%;
 }
-
 .form-search-form {
     width: 100%;
     display: flex;
     position: relative;
     box-shadow: rgb(98 98 98 / 50%) 0px 1px 2px 0px;
 }
-
 .form-search-input {
     border: 0px;
     padding: 0px 12px;
@@ -138,15 +111,10 @@ img {
     border-radius: 2px 0px 0px 2px;
     flex: 1 1 0%;
     outline: none;
-}
-
-
-button,
+}button,
 input {
     overflow: visible;
-}
-
-button,
+}button,
 input,
 optgroup,
 select,
@@ -156,7 +124,6 @@ textarea {
     line-height: 1.15;
     margin: 0px;
 }
-
 .form-search-button {
     cursor: pointer;
     border: 0px;
@@ -174,13 +141,11 @@ textarea {
     -webkit-box-pack: center;
     justify-content: center;
 }
-
 .form-search-button .icon-search {
     width: 20px;
     height: 20px;
     margin: 0px 8px 0px 0px;
 }
-
 .header-user {
     display: flex;
     -webkit-box-align: center;
@@ -188,7 +153,6 @@ textarea {
     -webkit-box-pack: end;
     justify-content: flex-end;
 }
-
 .header-account-container {
     cursor: pointer;
     margin: 0px 0px 0px 16px;
@@ -200,22 +164,17 @@ textarea {
     position: relative;
     letter-spacing: 0.7px;
 }
-
-
 .profile-icon {
     width: 32px;
     height: 32px;
     margin-right: 8px;
     border-radius: 2px;
 }
-
 .style-wrapper {
     cursor: pointer;
     display: flex;
     align-self: stretch;
 }
-
-
 .style-wrapper .menu-button {
     display: flex;
     -webkit-box-align: center;
@@ -225,19 +184,16 @@ textarea {
     font-weight: 400;
     min-height: 44px;
 }
-
 .style-wrapper .menu-button .hamburger-menu {
     width: 32px;
     height: 32px;
     margin-right: 8px;
 }
-
 .style-wrapper .menu-button .wrap {
     display: flex;
     flex-direction: column;
     padding-top: 2px;
 }
-
 .style-wrapper .menu-button .wrap span {
     font-size: 11px;
     font-weight: normal;
@@ -245,7 +201,6 @@ textarea {
     font-style: normal;
     line-height: 1.45;
 }
-
 .style-wrapper .menu-button .wrap .text-icon {
     font-size: 13px;
     font-weight: 500;
@@ -255,26 +210,21 @@ textarea {
     display: flex;
     align-items: flex-end;
 }
-
-
 .style-wrapper .menu-button .wrap .text-icon img {
     position: relative;
     top: -1px;
     width: 16px;
     height: 16px;
 }
-
 .header-user-shortcut-cart {
     position: relative;
     display: block;
 }
-
 .header-user-shortcut-cart a {
     color: rgb(0, 127, 240);
     text-decoration: none;
     background-color: transparent;
 }
-
 .user-style-item {
     cursor: pointer;
     margin: 0px 0px 0px 16px;
@@ -286,18 +236,15 @@ textarea {
     letter-spacing: 0.7px;
     align-items: flex-end;
 }
-
 .user-style-item .cart-wrapper {
     position: relative;
     margin-right: 8px;
     display: flex;
 }
-
 .cart-icon {
     width: 32px;
     height: 32px;
 }
-
 .num-cart-item {
     color: rgb(36, 36, 36);
     background: rgb(253, 216, 53);
@@ -313,7 +260,6 @@ textarea {
     position: absolute;
     padding: 0px 7px;
 }
-
 .user-style-item-text {
     color: rgb(255, 255, 255);
     font-weight: 400;
@@ -322,7 +268,6 @@ textarea {
     flex-direction: column;
 
 }
-
 .user-style-no-wrap {
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -332,7 +277,6 @@ textarea {
     font-size: 11px;
     line-height: 16px;
 }
-
 .user-style-item-text .account-label {
     display: flex;
     -webkit-box-align: center;
@@ -341,19 +285,16 @@ textarea {
     line-height: 20px;
     min-width: 120px;
 }
-
 .user-style-item-text .account-label span {
     max-width: 104px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-
 .arrow-icon {
     width: 16px;
     height: 16px;
 }
-
 .overlay {
     position: fixed;
     visibility: collapse;
@@ -362,7 +303,6 @@ textarea {
     overflow-y: scroll;
     z-index: 1000;
 }
-
 .overlay-content {
     position: relative;
     inset: 0px;
@@ -375,7 +315,6 @@ textarea {
     width: 800px;
     margin: 80px auto;
 }
-
 .overlay-root {
     background: rgb(248, 248, 248);
     display: flex;
@@ -383,7 +322,6 @@ textarea {
     border-radius: 20px;
     position: relative;
 }
-
 .overlay-root .btn-close {
     position: absolute;
     right: -15px;
@@ -394,45 +332,37 @@ textarea {
     border: none;
     cursor: pointer;
 }
-
 .overlay-root .btn-close img {
     max-width: 100%;
 }
-
 .overlay-root .style-left {
     width: 500px;
     padding: 40px 45px 24px;
     background: rgb(255, 255, 255);
     border-radius: 20px 0px 0px 20px;
 }
-
 .style-login {
 
 }
-
 .style-login .heading {
     margin: 20px 0px;
     color: rgb(36, 36, 36);
 }
-
 .style-login .heading h4 {
     margin: 0px 0px 10px;
     font-size: 24px;
     font-weight: 500;
 }
-
 .style-login .heading p {
     margin: 0px;
     font-size: 15px;
     line-height: 20px;
 }
-
 .style-login .input {
     position: relative;
     z-index: 1;
     margin-bottom: 15px;
 }
-
 .style-login .input input {
     width: 100%;
     padding: 10px 0px;
@@ -441,7 +371,6 @@ textarea {
     color: rgb(36, 36, 36);
     outline: none;
 }
-
 .style-login .input::before {
     content: "";
     position: absolute;
@@ -450,11 +379,9 @@ textarea {
     bottom: 0px;
     border-bottom: 1px solid rgb(224, 224, 224);
 }
-
 .style-login .input-fill::before {
     border-color: rgb(13, 92, 182);
 }
-
 .style-login .input .show-password {
     position: absolute;
     right: 0px;
@@ -465,7 +392,6 @@ textarea {
     display: inline-block;
     cursor: pointer;
 }
-
 .style-login .input .hide-password {
     position: absolute;
     right: 0px;
@@ -476,7 +402,6 @@ textarea {
     display: none;
     cursor: pointer;
 }
-
 .style-login form button {
     margin: 26px 0px 10px;
     outline: none;
@@ -489,7 +414,6 @@ textarea {
     font-size: 20px;
     cursor: pointer;
 }
-
 .style-login .forgot-pass {
     color: rgb(13, 92, 182);
     font-size: 13px;
@@ -497,20 +421,17 @@ textarea {
     cursor: pointer;
     display: inline-block;
 }
-
 .style-login .create-account {
     color: rgb(120, 120, 120);
     font-size: 13px;
     margin: 10px 0px 0px;
 }
-
 .style-login .create-account span {
     color: rgb(13, 92, 182);
     display: inline-block;
     margin-left: 5px;
     cursor: pointer;
 }
-
 .style-right {
     background: linear-gradient(
             136deg
@@ -524,39 +445,32 @@ textarea {
     flex-direction: column;
     border-radius: 0px 20px 20px 0px;
 }
-
 .style-right .content {
     margin: 30px 0px 0px;
     text-align: center;
 }
-
 .style-right .content h4 {
     margin: 0px 0px 5px;
     color: rgb(11, 116, 229);
     font-size: 17px;
     font-weight: 500;
 }
-
 .style-right .content span {
     font-size: 13px;
     color: rgb(11, 116, 229);
     font-weight: 500;
 }
-
 .style-login .login-with-email {
     margin: 10px 0px 0px;
     text-align: center;
     color: rgb(13, 92, 182);
     cursor: pointer;
 }
-
 .style-login-with-phone {
 }
-
 .style-login-with-email {
     display: none;
 }
-
 .style-login .btn-action {
     cursor: pointer;
     padding: 0px;
@@ -564,21 +478,17 @@ textarea {
     background: transparent;
     border: none;
 }
-
 .style-login .btn-action img {
     width: 21px;
 }
-
 .style-social {
     text-align: center;
     margin: 80px 0px 0px;
 }
-
 .style-social .social-heading {
     margin: 0px 0px 15px;
     position: relative;
 }
-
 .style-social .social-heading span {
     font-size: 15px;
     color: rgb(120, 120, 120);
@@ -588,7 +498,6 @@ textarea {
     position: relative;
     z-index: 2;
 }
-
 .style-social .social__items {
     display: flex;
     flex-direction: row;
@@ -600,21 +509,17 @@ textarea {
     -webkit-box-pack: center;
     justify-content: center;
 }
-
 .style-social .social__item {
     margin: 0px 10px;
 }
-
 .style-social .social__item img {
     width: 58px;
 }
-
 .style-social .note {
     font-size: 11px;
     color: rgb(120, 120, 120);
     text-align: center;
 }
-
 .style-social .note a {
     display: inline-block;
     text-decoration: underline;
@@ -622,7 +527,6 @@ textarea {
     font-size: 11px;
     color: rgb(120, 120, 120);
 }
-
 .style-login-with-phone .input input {
     width: 100%;
     padding: 10px 0px;
@@ -631,11 +535,180 @@ textarea {
     color: rgb(36, 36, 36);
     outline: none;
 }
-
 .style-login-with-phone .input {
     margin: 0px;
 }
-
 .style-login-with-phone .heading {
     margin-top: 0px;
+}
+.footer-wraper {
+    padding-top: 50px;
+}
+.footer-newletter {
+    background-color: rgb(247, 247, 247);
+}
+.container-newletter {
+    width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container-newletter {
+    display: flex;
+    height: 100px;
+    padding-top: 32px;
+}
+.footer-newletter .NewsLetter-icon {
+    margin-top: -50px;
+    margin-right: 20px;
+}
+.footer-newletter .NewsLetter-description {
+    margin-right: 30px;
+    margin-bottom: 0px;
+    color: rgb(78, 80, 82);
+}
+.footer-newletter .NewsLetter-description h3 {
+    margin: 0px;
+    font-size: 16px;
+}
+.footer-newletter .NewsLetter-description h5 {
+    margin: 5px 0px 0px;
+    font-size: 13px;
+}
+.footer-newletter .NewsLetter-form {
+    display: flex;
+}
+.footer-newletter .NewsLetter-form input {
+    flex: 1 1 0%;
+    width: 345px;
+    height: 34px;
+    margin-right: 10px;
+    padding: 6px 12px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.footer-newletter .NewsLetter-form button {
+    cursor: pointer;
+    height: 34px;
+    padding: 6px 12px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 1.42857;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(0, 175, 239);
+    outline: none;
+}
+.footer-information {
+    padding: 40px 0px;
+    border-top: 1px solid rgb(247, 247, 247);
+    border-bottom: 1px solid rgb(247, 247, 247);
+    background-color: rgb(255, 255, 255);
+}
+.container-information {
+    width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container-information h4 {
+    margin: 0px 0px 17px;
+    color: rgb(51, 51, 51);
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    text-transform: uppercase;
+}
+.container-information .hotline {
+    margin-bottom: 10px;
+    color: rgb(196, 1, 26);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+.container-information .hotline a {
+    color: rgb(196, 1, 26);
+}
+.footer-wraper .small-text {
+    display: block;
+    margin-bottom: 11px;
+    color: rgb(51, 51, 51);
+    font-size: 12px;
+    font-weight: normal;
+}
+.container-information .security {
+    margin-bottom: 10px;
+    color: rgb(51, 51, 51);
+    font-size: 12px;
+    font-weight: 400;
+}
+.container-information .security a {
+    color: rgb(51, 51, 51);
+}
+.block p {
+    margin: 0px 0px 10px;
+}
+.footer-information .block .icon {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    vertical-align: middle;
+}
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.footer-information .block {
+    width: 226px;
+}
+.footer-information .block .store-title {
+    margin-top: 36px;
+}
+.footer-address {
+    padding: 40px 0px;
+    background-color: rgb(255, 255, 255);
+}
+.container-address {
+    width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer-address .address {
+    isplay: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 20px;
+}
+.footer-address .address {
+    idth: 492px;
+    margin-left: 20px;
+}
+.footer-address .address .address-title {
+    margin-bottom: 1px;
+    font-weight: 400;
+    line-height: 22px;
+}
+.footer-address .address .address-text {
+    margin-bottom: 1px;
+    font-size: 11px;
+    line-height: 22px;
+}
+.footer-copyright {
+    padding: 15px 0px 10px;
+    background-color: rgb(255, 255, 255);
+}
+.container-copyright {
+    width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }

@@ -135,10 +135,13 @@
         </div>
     </div>
     <?php
-    include_once "./DatabaseConnector.php";
-    $Database = new DatabaseConnector();
-    echo "connect success";
+    include_once './inc/footer.php';
     ?>
+<!--    --><?php
+//    include_once "./DatabaseConnector.php";
+//    $Database = new DatabaseConnector();
+//    echo "connect success";
+//    ?>
 </body>
 
 </html>
