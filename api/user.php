@@ -26,6 +26,12 @@ class user extends restful_api
             $this->response(200, $data);
         }
     }
+
+    function create() {
+        if ($this->method == "POST") {
+            $this->response(200, $this->params);
+        }
+    }
 }
 
 $user = new user();

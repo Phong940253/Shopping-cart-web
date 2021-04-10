@@ -11,7 +11,7 @@ class DatabaseConnector
         $port = 3306;
         try {
             $this->dbConnection = new mysqli($hostName, $userName, $passWord, $databaseName, $port);
-        } catch (\mysqli_sql_exception $e) {
+        } catch (Exception $e) {
             exit($e->getMessage());
         }
     }

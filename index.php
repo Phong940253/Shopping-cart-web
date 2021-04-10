@@ -52,6 +52,28 @@
                     $(this).parent().find(".show-password").show();
                 }
             });
+
+
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: true,
+                focusOnSelect: true
+            });
+
+            $('a[data-slide]').click(function(e) {
+                e.preventDefault();
+                var slideno = $(this).data('slide');
+                $('.slider-nav').slick('slickGoTo', slideno - 1);
+            });
             // an hien password
 
             // $(document).on("click", function(event){
@@ -134,11 +156,24 @@
             </div>
         </div>
     </div>
+
+
+    <div class="slider slider-nav">
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+    </div>
+
     <?php
-    include_once "./DatabaseConnector.php";
-    $Database = new DatabaseConnector();
-    echo "connect success";
+    include_once './inc/footer.php';
     ?>
+<!--    --><?php
+//    include_once "./DatabaseConnector.php";
+//    $Database = new DatabaseConnector();
+//    echo "connect success";
+//    ?>
 </body>
 
 </html>

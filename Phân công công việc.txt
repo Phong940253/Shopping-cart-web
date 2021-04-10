@@ -1,0 +1,7 @@
+Trang chính
+Quản lí sản phẩm (admin, bán)
+Quản lí người dùng (admin)
+Quản lí tag sản phẩm (admin, bán)
+Quản lí doanh thu (bán)
+Quản lí giỏ hàng (mua)
+... Còn tiếp
