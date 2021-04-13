@@ -572,6 +572,17 @@ textarea {
     margin: 0px;
     font-size: 16px;
 }
+
+.footer-newletter .NewsLetter-description h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
 .footer-newletter .NewsLetter-description h5 {
     margin: 5px 0px 0px;
     font-size: 13px;
@@ -723,7 +734,9 @@ body{
     display:block;
     margin:0 auto;
 }
-h3 {
+
+
+.slick-slider h3 {
     background: #fff;
     color: #3498db;
     font-size: 36px;

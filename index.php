@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./lib/jquery.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/slick/slick.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
 </head>
 
 <body>
@@ -15,10 +18,22 @@
     include_once './vendor/autoload.php';
     require("./inc/header.php");
     ?>
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script>
 
 
-
-    <div class="slider slider-nav">
+    <div class="slick-slider">
         <div><h3>1</h3></div>
         <div><h3>2</h3></div>
         <div><h3>3</h3></div>
