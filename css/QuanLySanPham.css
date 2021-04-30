@@ -84,8 +84,8 @@ a {
     color: rgb(155, 155, 155);
 }
 
-.ThongTinSanPham {
-    flex: 1 1 0%;
+
+.ThongTinSanPham {flex: 1 1 0%;
 }
 h3 {
     display: block;
@@ -140,9 +140,57 @@ h3 {
     line-height: 34px;
     outline: none;
 }
+.DanhMucSanPham {
+    display: flex;
+}
+
+.DanhMucSanPham select {
+    width: 100px;
+    border: 1px solid rgb(204, 204, 204);
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 34px;
+    outline: none;
+    border-radius: 4px;
+    margin: 0px 12px 0px 0px;
+    background: 0px center;
+    box-shadow: none;
+}
+
 /*button, input, optgroup, select, textarea {*/
 /*    font-family: inherit;*/
 /*    font-size: 100%;*/
 /*    line-height: 1.15;*/
 /*    margin: 0px;*/
 /*}*/
+.KhungThongTinSanPham .btn-them{
+    border: 0px;
+    width: 176px;
+    height: 40px;
+    border-radius: 4px;
+    color: rgb(74, 74, 74);
+    font-size: 14px;
+    background-color: rgb(253, 216, 53);
+    cursor: pointer;
+}
+.KhungThongTinSanPham .btn-capnhat{
+    border: 0px;
+    width: 176px;
+    height: 40px;
+    border-radius: 4px;
+    color: rgb(74, 74, 74);
+    font-size: 14px;
+    background-color: rgb(253, 216, 53);
+    cursor: pointer;
+    justify-content: flex-end;
+
+}
+
+.margin30 {
+    margin: 30px;
+}
+
+.Khung-form .flex-btn  {
+    justify-content: center;
+    flex: 1 1 0%;
+}
