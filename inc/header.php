@@ -71,6 +71,7 @@ echo '
     $(document).ready(function(){
         $(".header-account-container").click(function(){
             $(".overlay").css("visibility", "visible");
+            $("#login-with-phone").load("/modules/login/login-with-phone.html")
         });
         // hien menu dang nhap
 
@@ -103,28 +104,6 @@ echo '
                 $(this).parent().find(".hide-password").hide();
                 $(this).parent().find(".show-password").show();
             }
-        });
-
-
-        $(\'.slider-for\').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: \'.slider-nav\'
-        });
-        $(\'.slider-nav\').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: \'.slider-for\',
-            dots: true,
-            focusOnSelect: true
-        });
-
-        $(\'a[data-slide]\').click(function(e) {
-            e.preventDefault();
-            var slideno = $(this).data(\'slide\');
-            $(\'.slider-nav\').slick(\'slickGoTo\', slideno - 1);
         });
         // an hien password
 
@@ -167,35 +146,8 @@ echo '
                         <span>Tạo tài khoản</span>
                     </p>
                 </div>
-                <div class="style-login-with-phone style-login">
-                    <div class="heading">
-                        <h4>Xin chào</h4>
-                        <p>Đăng nhập hoặc tạo tài khoản</p>
-                    </div>
-                    <form>
-                        <div class="input input-fill">
-                            <input type="tel" name="tel" placeholder="Số điện thoại" value="">
-                        </div>
-                        <button>Tiếp tục</button>
-                    </form>
-                    <p class="login-with-email">Đăng nhập bằng email</p>
-                    <div class="style-social">
-                        <p class="social-heading">
-                            <span>Hoặc tiếp tục bằng</span>
-                        </p>
-                        <ul class="social__items">
-                            <li class="social__item">
-                                <img src="./img/facebook.png" alt="facebook">
-                            </li>
-                            <li class="social__item">
-                                <img src="./img/google.png" alt="google">
-                            </li>
-
-                        </ul>
-                        <p class="note">Bằng việc tiếp tục, bạn đã chấp nhận
-                            <a href="">điều khoản sử dụng</a>
-                        </p>
-                    </div>
+                <div id="login-with-phone" class="style-login-with-phone style-login">
+                    
                 </div>
             </div>
             <div class="style-right">

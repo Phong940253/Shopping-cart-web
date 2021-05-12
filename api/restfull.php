@@ -6,6 +6,11 @@ class restful_api
     protected $endpoint = '';
     protected $params   = array();
     protected $file     = null;
+    protected $res = [
+        "success" => "false",
+        "message" => "",
+        "data" => ""
+    ];
 
     protected function response($status_code, $data = NULL)
     {

@@ -9,34 +9,22 @@ class user extends restful_api
         parent::__construct();
     }
 
-    function random_user()
-    {
-        if ($this->method == "GET") {
-            $database = new DatabaseConnector();
-            $query = "select * from user ORDER BY RAND() LIMIT 1";
-            $result = $database->getConnection()->query($query);
-            $data = array();
-            try {
-                while ($row = $result->fetch_assoc()) {
-                    $data[] = $row;
-                }
-            } catch (Exception $e) {
-                echo $e->getMessage();
-            }
-            $this->response(200, $data);
-        }
-    }
-
     function create() {
         if ($this->method == "POST") {
             $database = new DatabaseConnector();
             $query = "INSERT INTO user (firstName, middleName, lastName, mobile, email, passwordHash, admin, vendor, registeredAt, intro, profile) VALUES ('" . $this->params['firstName'] . "', '" . $this->params['middleName'] . "', '" . $this->params['lastName'] . "', '" . $this->params['mobile'] . "', '" . $this->params['email'] . "', '" . $this->params['passwordHash'] . "', '" . $this->params['admin'] . "', '" . $this->params['vendor'] . "', '"  . date("Y-m-d") . "', '" . $this->params['intro'] . "', '" . $this->params['profile'] . "')";
-            $result = $database->getConnection()->query($query);
-            if ($result) {
-                $this->response(201, $this->params);
-            } else {
-                $this->response(500, "ERROR: Could not able to execute $query.");
+            try {
+                $result = $database->getConnection()->query($query);
+                if ($result) {
+                    $this->res["success"] = "true";
+                } else {
+                    $this->res["message"] = "ERROR: could not to insert user, $query";
+                }
+            } catch (Exception $e) {
+                error_log(print_r($e->getMessage(), true));
+                $this->response(500, $this->res);
             }
+            $this->response(200, $this->res);
         }
     }
 
@@ -45,16 +33,17 @@ class user extends restful_api
             $database = new DatabaseConnector();
             $query = "select * from user";
             $result = $database->getConnection()->query($query);
-            $data = array();
+            $this->res["data"] = array();
             try {
                 while ($row = $result->fetch_assoc()) {
-                    $data[] = $row;
+                    $this->res["data"][] = $row;
                 }
+                $this->res["success"] = "true";
             } catch (Exception $e) {
-                echo $e->getMessage();
-                $this->response(500, "ERROR");
+                error_log(print_r($e->getMessage(), true));
+                $this->response(500, $this->res);
             }
-            $this->response(200, $data);
+            $this->response(200, $this->res);
         }
     }
 }
