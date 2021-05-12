@@ -121,30 +121,8 @@ echo '
                 <img src="../img/close-button.png"/>
             </button>
             <div class="style-left">
-                <div class="style-login-with-email style-login">
-                    <button class="btn-action">
-                        <img src="./img/action.png" alt="arrow">
-                    </button>
-                    <div class="heading">
-                        <h4>Đăng nhập bằng email</h4>
-                        <p>Nhập email và mật khẩu tài khoản</p>
-                    </div>
-                    <form>
-                        <div class="input input-fill">
-                            <input type="email" name="email" placeholder="acb@email.com" value="">
-                        </div>
-                        <div class="input input-fill">
-                            <input type="password" placeholder="Mật khẩu" value="" id="password">
-                            <span class="show-password">Hiện</span>
-                            <span class="hide-password">Ẩn</span>
-                        </div>
-                        <button>Đăng nhập</button>
-                    </form>
-                    <p class="forgot-pass">Quên mật khẩu?</p>
-                    <p class="create-account">
-                        Chưa có tài khoản?
-                        <span>Tạo tài khoản</span>
-                    </p>
+                <div id="login-with-email" class="style-login-with-email style-login">
+                    
                 </div>
                 <div id="login-with-phone" class="style-login-with-phone style-login">
                     
