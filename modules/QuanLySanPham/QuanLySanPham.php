@@ -1,13 +1,19 @@
 <html>
-    <head
-        <link href="../css/QuanLySanPham.css" rel="stylesheet"/>
+    <head>
+        <link href="/css/QuanLySanPham.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/lib/jquery.min.js"></script>
     </head>
     <body>
+    <?php
+    include_once '../../vendor/autoload.php';
+    require("../../inc/header.php");
+    ?>
     <div class="PhanChung">
         <div class="KhungChung">
             <aside class="MucTuyChon">
                 <div class="TenNguoiDung">
-                    <img src="../img/no_avatar.png">
+                    <img src="../../img/no_avatar.png">
                     <div class="info">
                         Tài khoản
                         <b></b>
@@ -74,5 +80,8 @@
             </div>
         </div>
     </div>
+    <?php
+    include_once '/inc/footer.php';
+    ?>
     </body>
 </html>

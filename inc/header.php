@@ -1,5 +1,5 @@
 <?php
-include_once './vendor/autoload.php';
+include_once '/vendor/autoload.php';
 echo '
 <div class="header">
     <div class="container">
@@ -15,12 +15,12 @@ echo '
                     </div>
                     <div class="style-wrapper">
                         <a class="menu-button">
-                            <img class="hamburger-menu" src="../img/hamburger-menu.png" />
+                            <img class="hamburger-menu" src="/img/hamburger-menu.png" />
                             <div class="wrap">
                                 <span>Danh Mục</span>
                                 <span class="text-icon">
                                     Sản Phẩm
-                                    <img src="../img/arow.png" />
+                                    <img src="/img/arow.png" />
                                 </span>
                             </div>
                         </a>
@@ -30,7 +30,7 @@ echo '
                     <div class="form-search-form">
                         <input type="text" data-view-id="main_search_form_input" placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..." class="form-search-input"></input>
                         <button data-view-id="main_search_form_button" class="form-search-button">
-                            <img class="icon-search" src="../img/search.png" />
+                            <img class="icon-search" src="/img/search.png" />
                             Tìm Kiếm
                         </button>
                     </div>
@@ -38,7 +38,7 @@ echo '
             </div>
             <div class="header-user">
                 <div class="header-account-container">
-                    <img class="profile-icon" src="../img/profile.png" />
+                    <img class="profile-icon" src="/img/profile.png" />
                     <span class="user-style-item-text">
                         <span class="user-style-no-wrap">
                             Đăng Nhập / Đăng Ký
@@ -47,7 +47,7 @@ echo '
                             <span>
                                 Tài Khoản
                             </span>
-                            <img class="arrow-icon" src="../img/arow.png" />
+                            <img class="arrow-icon" src="/img/arow.png" />
                         </span>
                     </span>
                 </div>
@@ -55,7 +55,7 @@ echo '
                     <a>
                         <div class="user-style-item">
                             <div class="cart-wrapper">
-                                <img class="cart-icon" src="../img/cart.png" />
+                                <img class="cart-icon" src="/img/cart.png" />
                                 <span class="num-cart-item">0</span>
                             </div>
                             <span>Giỏ hàng</span>
@@ -149,7 +149,7 @@ echo '
     <div class="overlay-content">
         <div class="overlay-root">
             <button class="btn-close">
-                <img src="../img/close-button.png"/>
+                <img src="/img/close-button.png"/>
             </button>
             <div class="style-left">
                 <div id="login-with-email" class="style-login-with-email style-login"></div>
@@ -158,7 +158,7 @@ echo '
                 <div class="loader" style="display: flex; align-items: center; flex: 1; flex-direction: column;"></div>
             </div>
             <div class="style-right">
-                <img src="../img/icon.png" width="203">
+                <img src="/img/icon.png" width="203">
                 <div class="content">
                     <h4>Mua sắm tại Team-IT</h4>
                     <span>Siêu ưu đãi mỗi ngày</span>
