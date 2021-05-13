@@ -7,9 +7,9 @@ class restful_api
     protected $params   = array();
     protected $file     = null;
     protected $res = [
-        "success" => "false",
+        "success" => false,
         "message" => "",
-        "data" => ""
+        "data" => []
     ];
 
     protected function response($status_code, $data = NULL)
