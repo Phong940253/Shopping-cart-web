@@ -70,29 +70,35 @@ echo '
 <script>
     $(document).ready(function(){
         $(".header-account-container").click(function(){
-            $(".overlay").css("visibility", "visible");
             $("#login-with-phone").load("/modules/login/login-with-phone.html")
-        });
+            $(".overlay").css("visibility", "visible");    
+        })
         // hien menu dang nhap
 
         $(".btn-close").click(function () {
             $(".overlay").css("visibility", "collapse");
-        });
+            $("#login-with-phone").empty();
+            $("#login-with-email").empty();
+            $("#login-with-pass").empty();
+            $("div.loader").empty();
+        })
         // dong menu dang nhap
 
-        $(".login-with-email").click(function () {
-            $(".style-login-with-phone").hide();
-            $(".style-login-with-email").show();
+        $(".style-login-with-phone").on("click", ".login-with-email", function () {
+            $("#login-with-email").load("/modules/login/login-with-email.html");
+            $("#login-with-phone").empty();
+            $("#login-with-phone").empty();
         })
         // mo dang nhap voi email
 
-        $(".btn-action").click(function () {
-            $(".style-login-with-email").hide();
-            $(".style-login-with-phone").show();
+        $("#login-with-email, #login-with-pass").on("click", ".btn-action", function () {
+            $("#login-with-phone").load("/modules/login/login-with-phone.html")
+            $("#login-with-email").empty();
+            $("#login-with-pass").empty();
         })
         // mo dang nhap voi dien thoai
 
-        $(".show-password, .hide-password").on(\'click\', function() {
+        $("#login-with-email, #login-with-pass").on("click", ".show-password, .hide-password", function () {
             var passwordId = $(this).parents(\'div:first\').find(\'input\').attr(\'id\');
             console.log(passwordId);
             if ($(this).hasClass(\'show-password\')) {
@@ -104,8 +110,33 @@ echo '
                 $(this).parent().find(".hide-password").hide();
                 $(this).parent().find(".show-password").show();
             }
-        });
+        })
         // an hien password
+        
+        $("#login-with-phone").on("submit", "#submitPhoneForm", function (e) {
+            $("div.loader").load("/modules/load/loader.html")
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+            let form = $("#submitPhoneForm");
+            let url = form.attr("action");
+            $("#login-with-phone").empty()
+            $.ajax({
+                type: form.attr("method"),
+                url: url,
+                data: form.serialize()
+            }).always(function(data) {
+                $("#login-with-pass").load("/modules/login/login-with-pass.html");
+                $("#login-with-email").empty();
+                $("#login-with-phone").empty();
+                $("div.loader").empty();
+                if (data["status"] == 200) {
+                    alert("Login success!");
+                } else {
+                    alert("Login fail!");
+                }
+            })
+        });
+            
+        
 
         // $(document).on("click", function(event){
         //     if(!$(event.target).closest(".overlay-content").length){
@@ -121,12 +152,10 @@ echo '
                 <img src="../img/close-button.png"/>
             </button>
             <div class="style-left">
-                <div id="login-with-email" class="style-login-with-email style-login">
-                    
-                </div>
-                <div id="login-with-phone" class="style-login-with-phone style-login">
-                    
-                </div>
+                <div id="login-with-email" class="style-login-with-email style-login"></div>
+                <div id="login-with-phone" class="style-login-with-phone style-login"></div>
+                <div id="login-with-pass" class="style-login-with-pass style-login"></div>
+                <div class="loader" style="display: flex; align-items: center; flex: 1; flex-direction: column;"></div>
             </div>
             <div class="style-right">
                 <img src="../img/icon.png" width="203">

@@ -11,8 +11,9 @@ class user extends restful_api
 
     function create() {
         if ($this->method == "POST") {
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $database = new DatabaseConnector();
-            $query = "INSERT INTO user (firstName, middleName, lastName, mobile, email, passwordHash, admin, vendor, registeredAt, intro, profile) VALUES ('" . $this->params['firstName'] . "', '" . $this->params['middleName'] . "', '" . $this->params['lastName'] . "', '" . $this->params['mobile'] . "', '" . $this->params['email'] . "', '" . $this->params['passwordHash'] . "', '" . $this->params['admin'] . "', '" . $this->params['vendor'] . "', '"  . date("Y-m-d") . "', '" . $this->params['intro'] . "', '" . $this->params['profile'] . "')";
+            $query = "INSERT INTO user (firstName, middleName, lastName, mobile, email, passwordHash, admin, vendor, registeredAt, intro, profile) VALUES ('" . $this->params['firstName'] . "', '" . $this->params['middleName'] . "', '" . $this->params['lastName'] . "', '" . $this->params['mobile'] . "', '" . $this->params['email'] . "', '" . $this->params['passwordHash'] . "', '" . $this->params['admin'] . "', '" . $this->params['vendor'] . "', '"  . date("Y-m-d H:i:s") . "', '" . $this->params['intro'] . "', '" . $this->params['profile'] . "')";
             try {
                 $result = $database->getConnection()->query($query);
                 if ($result) {
@@ -44,6 +45,12 @@ class user extends restful_api
                 $this->response(500, $this->res);
             }
             $this->response(200, $this->res);
+        }
+    }
+
+    function login() {
+        if ($this->mothod == "POST") {
+
         }
     }
 }
