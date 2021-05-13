@@ -136,13 +136,6 @@ echo '
             })
         });
             
-        
-
-        // $(document).on("click", function(event){
-        //     if(!$(event.target).closest(".overlay-content").length){
-        //         $(".overlay").css("visibility", "collapse");
-        //     }
-        // });
     });
 </script>
 <div class="overlay">
