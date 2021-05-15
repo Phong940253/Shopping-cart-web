@@ -1,5 +1,6 @@
 <?php
 include_once '/vendor/autoload.php';
+session_start();
 echo '
 <div class="header">
     <div class="container">
@@ -71,6 +72,9 @@ echo '
     $(document).ready(function(){
         $(".header-account-container").click(function(){
             $("#login-with-phone").load("/modules/login/login-with-phone.html")
+            $("#login-with-email").empty();
+            $("#login-with-pass").empty();
+            $("div.loader").empty();
             $(".overlay").css("visibility", "visible");    
         })
         // hien menu dang nhap
@@ -124,25 +128,29 @@ echo '
                 url: url,
                 data: form.serialize()
             }).always(function(data) {
-                $("#login-with-pass").load("/modules/login/login-with-pass.html");
                 $("#login-with-email").empty();
                 $("#login-with-phone").empty();
                 $("div.loader").empty();
-                if (data["status"] == 200) {
-                    alert("Login success!");
+                let reponse = JSON.parse(data.responseText.substring(5));
+                if (reponse["success"]) {
+                    $("#login-with-pass").load("/modules/login/login-with-pass.html", () => {
+                        $("div.heading p b").text(reponse["data"]["0"]["mobile"]);
+                        $("#login-with-pass").on("submit", "#submitFormPassword", (e) => {
+                             e.preventDefault();
+                             let passwordHash = $("#submitFormPassword div.input input").val();
+                             if (passwordHash == reponse["data"]["0"]["passwordHash"]) {
+                                 
+                             }
+                        });
+                    });
                 } else {
-                    alert("Login fail!");
+                    $("#login-with-pass").load("/modules/login/login-with-pass.html");
+                    alert("Failed!");
                 }
-            })
+            });
         });
             
         
-
-        // $(document).on("click", function(event){
-        //     if(!$(event.target).closest(".overlay-content").length){
-        //         $(".overlay").css("visibility", "collapse");
-        //     }
-        // });
     });
 </script>
 <div class="overlay">

@@ -4,7 +4,7 @@ echo '
     <div class="footer-newletter">
         <div class="container-newletter">
             <div class="NewsLetter-icon">
-                <img src="../img/newsletter.png" width="163" alt="">
+                <img src="/img/newsletter.png" width="163" alt="">
             </div>
             <div class="NewsLetter-description">
                 <h3>Đăng ký nhận bản tin Team-IT</h3>
@@ -57,22 +57,22 @@ echo '
             <div class="block">
                 <h4>PHƯƠNG THỨC THANH TOÁN</h4>
                 <p>
-                    <img class="icon" src="../img/visa.svg" width="54" alt="">
-                    <img class="icon" src="../img/mastercard.svg" width="54" alt="">
-                    <img class="icon" src="../img/jcb.svg" width="54" alt="">
-                    <img class="icon" src="../img/cash.svg" width="54" alt="">
-                    <img class="icon" src="../img/internet-banking.svg" width="54" alt="">
-                    <img class="icon" src="../img/installment.svg" width="54" alt="">
+                    <img class="icon" src="/img/visa.svg" width="54" alt="">
+                    <img class="icon" src="/img/mastercard.svg" width="54" alt="">
+                    <img class="icon" src="/img/jcb.svg" width="54" alt="">
+                    <img class="icon" src="/img/cash.svg" width="54" alt="">
+                    <img class="icon" src="/img/internet-banking.svg" width="54" alt="">
+                    <img class="icon" src="/img/installment.svg" width="54" alt="">
                 </p>
             </div>
             <div class="block">
                 <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
                 <p>
                     <a rel="noreferrer" href="https://www.facebook.com/Team-IT.vn/" class="icon" target="_blank" title="Facebook">
-                        <img src="../img/fb.svg" width="32" alt="">
+                        <img src="/img/fb.svg" width="32" alt="">
                     </a>
                     <a rel="noreferrer" href="https://www.youtube.com/user/Team-ITVBlog" class="icon" target="_blank" title="Youtube">
-                        <img src="../img/youtube.svg" width="32" alt="">
+                        <img src="/img/youtube.svg" width="32" alt="">
                     </a>
                 </p>
                 <h4 class="store-title">TẢI ỨNG DỤNG TRÊN ĐIỆN THOẠI</h4>
