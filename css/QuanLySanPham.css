@@ -11,12 +11,16 @@
 .div {
     display: block;
 }
+body {
+    background: rgb(241, 241, 241);
+}
 .PhanChung {
     width: 1270px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: 0px;
+    margin-left: 0px;
+    background: rgb(241, 241, 241);
 }
 .KhungChung {
     display: flex;
@@ -57,18 +61,7 @@ img {
     list-style: none;
     font-size: 13px;
 }
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-.ThongTinTuyChon a:hover, .ThongTinTuyChon a:active, .ThongTinTuyChon a:focus, .ThongTinTuyChon a.is-active {
-    background-color: rgb(236, 236, 236);
-    color: rgb(0, 0, 0);
-}
-a {
-    color: rgb(0, 127, 240);
-    text-decoration: none;
-}
+
 .ThongTinTuyChon a {
     display: flex;
     -webkit-box-align: center;
@@ -84,6 +77,14 @@ a {
     color: rgb(155, 155, 155);
 }
 
+.ThongTinTuyChon a {
+    color: rgb(74, 74, 74);
+}
+
+.ThongTinTuyChon a:hover {
+    background: rgb(0, 127, 240);
+    color: #fff;
+}
 
 .ThongTinSanPham {flex: 1 1 0%;
 }
