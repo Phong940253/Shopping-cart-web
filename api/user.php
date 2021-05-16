@@ -1,8 +1,11 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/api/restfull.php';
+
 include_once $_SERVER['DOCUMENT_ROOT'].'/DatabaseConnector.php';
 include_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/api/restfull.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/api/encryptPassword.php";
 use \Firebase\JWT\JWT;
+
 class user extends restful_api
 {
     function __construct()
@@ -14,7 +17,8 @@ class user extends restful_api
         if ($this->method == "POST") {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $database = new DatabaseConnector();
-            $query = "INSERT INTO user (firstName, middleName, lastName, mobile, email, passwordHash, admin, vendor, registeredAt, intro, profile) VALUES ('" . $this->params['firstName'] . "', '" . $this->params['middleName'] . "', '" . $this->params['lastName'] . "', '" . $this->params['mobile'] . "', '" . $this->params['email'] . "', '" . $this->params['passwordHash'] . "', '" . $this->params['admin'] . "', '" . $this->params['vendor'] . "', '"  . date("Y-m-d H:i:s") . "', '" . $this->params['intro'] . "', '" . $this->params['profile'] . "')";
+            $passwordHash = encrypt($this->params["passwordHash"]);
+            $query = "INSERT INTO user (firstName, middleName, lastName, mobile, email, passwordHash, admin, vendor, registeredAt, intro, profile) VALUES ('" . $this->params['firstName'] . "', '" . $this->params['middleName'] . "', '" . $this->params['lastName'] . "', '" . $this->params['mobile'] . "', '" . $this->params['email'] . "', '" . $passwordHash . "', '" . $this->params['admin'] . "', '" . $this->params['vendor'] . "', '"  . date("Y-m-d H:i:s") . "', '" . $this->params['intro'] . "', '" . $this->params['profile'] . "')";
             try {
                 $result = $database->getConnection()->query($query);
                 if ($result) {
@@ -26,7 +30,7 @@ class user extends restful_api
                 error_log(print_r($e->getMessage(), true));
                 $this->response(500, $this->res);
             }
-            $this->response(200, $this->res);
+            $this->response(201, $this->res);
         }
     }
 
@@ -49,10 +53,28 @@ class user extends restful_api
         }
     }
 
+    function get() {
+        if ($this->method == "POST") {
+            //TODO
+        }
+    }
+
+    function  edit() {
+        if ($this->method == "PUT") {
+            //TODO
+        }
+    }
+
+    function delete() {
+        if ($this->method == "DELETE") {
+            //TODO
+        }
+    }
+
     function login() {
         if ($this->method == "POST") {
             $database = new DatabaseConnector();
-            $query = "select * from user where email = '" . $this->params["email"] . "' OR mobile = '" . $this->params["mobile"] . "'";
+            $query = "select id from user where email = '" . $this->params["email"] . "' OR mobile = '" . $this->params["mobile"] . "'";
             error_log(print_r($query, true));
             $result = $database->getConnection()->query($query);
             $this->res["data"] = array();
@@ -60,6 +82,29 @@ class user extends restful_api
             try {
                     if ($num > 0) {
                         $this->res["data"] = $result->fetch_assoc();
+                        $this->res["success"] = true;
+                    }
+            } catch (Exception $e) {
+                error_log(print_r($e->getMessage(), true));
+                $this->response(500, $this->res);
+            }
+            $this->response(200, $this->res);
+        }
+    }
+
+    function autho () {
+        if ($this->method == "POST") {
+            $database = new DatabaseConnector();
+            $query = "select firstName, middleName, lastName, mobile, email, passwordHash from user where id = " . $this->params["id"];
+            error_log(print_r($query, true));
+            $result = $database->getConnection()->query($query);
+            $this->res["data"] = array();
+            $num = $result->num_rows;
+            try {
+                if ($num > 0) {
+                    $this->res["data"] = $result->fetch_assoc();
+                    $passwordHash = encrypt($this->params["password"]);
+                    if ($this->res["data"]["passwordHash"] == $passwordHash) {
                         $this->res["success"] = true;
 
                         //setup token
@@ -82,13 +127,15 @@ class user extends restful_api
                                 "email" => $this->res["data"]["email"]
                             )
                         );
-                        $jwt = JWT::encode($token, $key, 'RS256');
+                        $jwt = JWT::encode($token, $key);
                         $this->res["jwt"] = $jwt;
                     }
+                }
             } catch (Exception $e) {
                 error_log(print_r($e->getMessage(), true));
                 $this->response(500, $this->res);
             }
+            $this->res["data"] = [];
             $this->response(200, $this->res);
         }
     }
