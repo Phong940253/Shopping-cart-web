@@ -22,7 +22,7 @@
           <ul class="ThongTinTuyChon">
             <li>
               <a class="Thong-tin-tai-khoan">
-                  <img class="icon" src="/img/Thong-tin.svg">
+                  <img class="icon" src="/img/info.svg">
                 <span>Thông tin sản phẩm</span>
               </a>
             </li>
@@ -35,7 +35,7 @@
             </li>
             <li>
               <a class="Quan-ly-don-hang">
-                <img class="icon" src="/img/QL-don-hang.svg">
+                <img class="icon" src="/img/Quan-li-don-hang.svg">
                 <span>Quản lý đơn hàng</span>
               </a>
             </li>
