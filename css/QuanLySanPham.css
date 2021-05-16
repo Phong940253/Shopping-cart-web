@@ -12,24 +12,28 @@
     display: block;
 }
 body {
-    background: rgb(241, 241, 241);
+    background: rgb(239, 239, 239);
 }
 .PhanChung {
-    width: 1270px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right:15px;
     margin-right: 0px;
     margin-left: 0px;
-    background: rgb(241, 241, 241);
+    background: rgb(239, 239, 239);
 }
 .KhungChung {
+    padding-right: 15%;
+    padding-left: 5%;
     display: flex;
     width: 100%;
     margin:  20px;
     flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
 }
 .MucTuyChon {
-    width: 250px;
+    /*display: flex;*/
+    /*flex: 1;*/
     margin-right: 17px;
 }
 .TenNguoiDung {
@@ -86,7 +90,9 @@ img {
     color: #fff;
 }
 
-.ThongTinSanPham {flex: 1 1 0%;
+.ThongTinSanPham {
+    display: flex;
+    flex: 1 1 0%;
 }
 h3 {
     display: block;
@@ -105,11 +111,9 @@ h3 {
 }
 .KhungThongTinSanPham {
     background-color: rgb(255, 255, 255);
-    padding: 30px 20px;
-    border-radius: 4px;
-}
-.KhungThongTinSanPham form {
-    width: 600px;
+    padding: 60px 20px;
+    flex: 1 1 0%;
+    display: flex;
 }
 .KhungThongTinSanPham .Khung-form{
     display: flex;
