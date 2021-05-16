@@ -4,6 +4,8 @@
     "keywords": ["shopping"],
     "license": "MIT",
     "require": {
-        "ext-json": "*"
+        "ext-json": "*",
+        "firebase/php-jwt": "^5.2",
+      "ext-mysqli": "*"
     }
 }
