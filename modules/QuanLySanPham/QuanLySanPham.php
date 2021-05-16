@@ -22,103 +22,68 @@
           <ul class="ThongTinTuyChon">
             <li>
               <a class="Thong-tin-tai-khoan">
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
-                </svg>
+                  <img class="icon" src="/img/Thong-tin.svg">
                 <span>Thông tin sản phẩm</span>
               </a>
             </li>
             <li>
               <a class="Thong-bao-cua-toi">
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                ></svg>
+                <img class="icon" src="/img/Thong-bao.svg">
+                </svg>
                 <span>Thông báo của tôi</span>
               </a>
             </li>
             <li>
               <a class="Quan-ly-don-hang">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
+                <img class="icon" src="/img/QL-don-hang.svg">
                 <span>Quản lý đơn hàng</span>
               </a>
             </li>
             <li>
-              <a class="So-dia-chi">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
-                <span>Sổ địa chỉ</span>
+              <a class="Dia-chi">
+                <img class="icon" src="/img/Dia-chi.svg">
+                <span>Địa chỉ</span>
               </a>
             </li>
             <li>
               <a class="Thong-tin-thanh-toan">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
+                <img class="icon" src="/img/Thong-tin-thanh-toan.svg">
                 <span>Thông tin thanh toán</span>
               </a>
             </li>
             <li>
               <a class="Nhan-xet">
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                       viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                  </svg>
+                <img class="icon" src="/img/Nhan-xet.svg">
                 <span>Nhận xét sản phẩm đã mua</span>
               </a>
             </li>
             <li>
               <a class="San-pham-da-xem">
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
+                <img class="icon" src="/img/Da-xem.svg">
                 <span>Sản phẩm đã xem</span>
               </a>
             </li>
             <li>
               <a class="San-pham-yeu-thich">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
+                <img class="icon" src="/img/like.svg">
                 <span>Sản phẩm yêu thích</span>
               </a>
             </li>
             <li>
               <a class="Mua-sau">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
+                  <img class="icon" src="/img/later.svg">
                 <span>Mua sau</span>
               </a>
             </li>
             <li>
               <a class="Hoi-dap">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
+                <img class="icon" src="/img/Hoi-dap.svg">
                 <span>Hỏi đáp</span>
               </a>
             </li>
             <li>
               <a class="Ma-giam-gia">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                </svg>
+                  <img class="icon" src="/img/Sale.svg">
                 <span>Mã giảm giá</span>
               </a>
             </li>
