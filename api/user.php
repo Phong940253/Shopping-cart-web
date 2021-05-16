@@ -1,7 +1,8 @@
 <?php
 include_once './restfull.php';
 include_once '../DatabaseConnector.php';
-
+require_once '../vendor/autoload.php';
+use \Firebase\JWT\JWT;
 class user extends restful_api
 {
     function __construct()
@@ -51,29 +52,39 @@ class user extends restful_api
     function login() {
         if ($this->method == "POST") {
             $database = new DatabaseConnector();
-            $query = "select mobile, email, passwordHash from user";
+            $query = "select * from user where email = '" . $this->params["email"] . "' OR mobile = '" . $this->params["mobile"] . "'";
+            error_log(print_r($query, true));
             $result = $database->getConnection()->query($query);
-            $data = array();
             $this->res["data"] = array();
+            $num = $result->num_rows;
             try {
-                while ($row = $result->fetch_assoc()) {
-                    $data[] = $row;
-                }
-                foreach ($data as $datum) {
-                    if (!empty($datum["mobile"])) {
-                        if ($datum["mobile"] == $this->params["mobile"]) {
-                            $this->res["success"] = true;
-                            $this->res["data"][] = $datum;
-                            break;
-                        }
-                    } else if (!empty($datum["email"])) {
-                        if ($datum["email"] == $this->params["email"]) {
-                            $this->res["success"] = true;
-                            $this->res["data"][] = $datum;
-                            break;
-                        }
+                    if ($num > 0) {
+                        $this->res["data"] = $result->fetch_assoc();
+                        $this->res["success"] = true;
+
+                        //setup token
+                        $key = "Phong";
+                        date_default_timezone_set('Asia/Ho_Chi_Minh');
+                        $issued_at = time();
+                        $expiration_time = $issued_at + (60 * 60 * 24 * 30); // valid for 1 hour
+                        $issuer = "team-it";
+                        $token = array(
+                            "iat" => $issued_at,
+                            "exp" => $expiration_time,
+                            "iss" => $issuer,
+                            "nbf" => $issued_at,
+                            "data" => array(
+                                "id" => $this->res["data"]["id"],
+                                "firstName" => $this->res["data"]["firstName"],
+                                "middleName" => $this->res["data"]["middleName"],
+                                "lastName" => $this->res["data"]["id"],
+                                "mobile" => $this->res["data"]["mobile"],
+                                "email" => $this->res["data"]["email"]
+                            )
+                        );
+                        $jwt = JWT::encode($token, $key, 'RS256');
+                        $this->res["jwt"] = $jwt;
                     }
-                }
             } catch (Exception $e) {
                 error_log(print_r($e->getMessage(), true));
                 $this->response(500, $this->res);

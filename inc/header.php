@@ -1,6 +1,5 @@
 <?php
 include_once '/vendor/autoload.php';
-session_start();
 echo '
 <div class="header">
     <div class="container">
@@ -139,7 +138,7 @@ echo '
                              e.preventDefault();
                              let passwordHash = $("#submitFormPassword div.input input").val();
                              if (passwordHash == reponse["data"]["0"]["passwordHash"]) {
-                                 
+                                 setCookie("")
                              }
                         });
                     });
@@ -175,4 +174,5 @@ echo '
         </div>
     </div>
 </div>
+<script src="/js/Login.js"></script>
 ';
