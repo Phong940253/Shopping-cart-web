@@ -15,8 +15,8 @@
 
 <body>
     <?php
-    include_once './vendor/autoload.php';
-    require("./inc/header.php");
+    include_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
+    include_once $_SERVER['DOCUMENT_ROOT']."/inc/header.php";
     ?>
     <script>
         $(document).ready(function(){
@@ -41,7 +41,7 @@
         <div><h3>5</h3></div>
     </div>
     <?php
-    include_once './inc/footer.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/inc/footer.php';
     ?>
 <!--    --><?php
 //    include_once "./DatabaseConnector.php";

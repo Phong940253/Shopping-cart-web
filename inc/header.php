@@ -1,5 +1,5 @@
 <?php
-include_once '/vendor/autoload.php';
+include_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
 echo '
 <div class="header">
     <div class="container">

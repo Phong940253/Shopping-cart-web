@@ -1,7 +1,7 @@
 <?php
-include_once './restfull.php';
-include_once '../DatabaseConnector.php';
-require_once '../vendor/autoload.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/api/restfull.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/DatabaseConnector.php';
+include_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
 use \Firebase\JWT\JWT;
 class user extends restful_api
 {
