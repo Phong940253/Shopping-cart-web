@@ -20,6 +20,7 @@ class product extends restful_api
                 $result = $database->getConnection()->query($query);
                 if ($result) {
                     $this->res["success"] = true;
+                    $this->res["message"] = "Create success!";
                 } else {
                     $this->res["message"] = "ERROR: could not to insert user, $query";
                 }

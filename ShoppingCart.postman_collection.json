@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "2e107e50-9698-4e0b-b4d2-964c6a5d2e0e",
+		"name": "ShoppingCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/user.php/getall",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user.php",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "Nguyen",
+									"type": "text"
+								},
+								{
+									"key": "middleName",
+									"value": "Van",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Phong",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "123@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "passwordHash",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "admin",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "registeredAt",
+									"value": "2021-10-10",
+									"type": "text"
+								},
+								{
+									"key": "intro",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "profile",
+									"value": "none",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/user.php/create",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user.php",
+								"create"
+							]
+						},
+						"description": "POST user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Tai Nghe Nhét Tai Langsdom Super Bass JM26 cho iPhone/Samsung/Oppo ",
+									"type": "text"
+								},
+								{
+									"key": "metaTitle",
+									"value": "tai nghe",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "tai nghe nhet tai phien ban 2",
+									"type": "text"
+								},
+								{
+									"key": "summary",
+									"value": "Thương hiệu:Langston\nXuất xứ thương hiệu:Hong Kong\nKích thước:10x8x5\nĐộ nhạy:92db ± 3d.\nModel:jm26\nLoại Jack cắm:jack cắm 3.5 cho smarphone\nXuất xứ:Hong Kong\nTrọng:lượng 16g\nTần số:20 ~ 20000Hz",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "6676022654039",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "38000",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "75",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "shop",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "startsAt",
+									"value": "2020-11-1",
+									"type": "text"
+								},
+								{
+									"key": "endsAt",
+									"value": "2021-1-1",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Thiết kế gọn nhẹ, tiện dụng\n\nTrở kháng: 16 Ohms\n\nTần số: 20Hz - 20000Hz\n\nĐộ nhạy: 101dB\n\nĐường kính loa: 10mm\n\nTương thích với nhiều thiết bị\nThiết kế nhỏ gọn, tiện dụng\nTai Nghe Nhét Tai Langsdom Super Bass JM26 được thiết kế khá tinh xảo với kiểu dáng siêu hiện đại, tông màu bắt mắt, làm nổi bật hơn cho những phụ kiện phối kèm với người sở hữu.\n\nDây chống rối tốt\nDây dài 1.2m với thiết kế chống rối siêu tiện ích đem đến nhiều tiện lợi hơn cho người dùng. Ngoài ra, vỏ tai nghe làm bằng chất liệu cao cấp cho chất âm đầy đặn và rõ nét hơn, đồng thời cũng góp phần nâng cao tuổi thọ sử dụng cho sản phẩm.\n\nÂm thanh sôi động\nTai nghe Langsdom JM26 cho ra những âm bass với chất lượng cực đỉnh, chất âm có chiều sâu, rõ ràng, chi tiết trong từng giai điệu mang đến cho người dùng những phút giây giải trí cực đã.\n\nDễ dàng mang theo\nKích thước của tai nghe khá nhẹ, do đó bạn có thể dễ dàng gấp gọn nhét túi, balo hay túi xách đều thuận tiện, đặc biệt là khi mang theo trong những chuyến hành trình xa mà không lo vướng víu.\n\nThoải mái hơn khi đeo\nLangsdom JM26 tạo điểm nhấn tiếp theo khi mà ốp tai được làm bằng mút đệm cao su chất lượng cao tạo độ mềm mại, thoải mái hơn cho người dùng khi đeo, đặc biệt là trong thời gian dài.\n\nĐàm thoại và điều khiển dễ dàng hơn\nThực hiện cuộc gọi rảnh tay và chuyển tiếp các bài hát chỉ trong nháy mắt mà không cần phải chạm vào điện thoại thông minh của bạn, đó chính là việc nhờ vào bộ điều khiển từ xa và micro trực tuyến được tích hợp trên tai nghe, mang đến cho người dùng những trải nghiệm mới mẻ và nhiều hứng thú hơn.\n\nTương thích mọi thiết bị\nSử dụng cho hầu hết các dòng thiết bị phổ biến hiện nay như PC, laptop, điện thoại, máy tính bảng.\n\nGiá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ...",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/product.php/create",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"product.php",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/product.php/getall",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"product.php",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login & Author",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mobile",
+									"value": "01676940253",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0396526906",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/user.php/login",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user.php",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authorization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "passwordHash",
+									"value": "hello",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/user.php/autho",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user.php",
+								"autho"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
