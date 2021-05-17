@@ -66,6 +66,7 @@ img {
     font-size: 13px;
 }
 
+
 .ThongTinTuyChon a {
     display: flex;
     -webkit-box-align: center;
@@ -73,6 +74,7 @@ img {
     padding: 7px 18px;
     color: rgb(74, 74, 74);
 }
+
 .ThongTinTuyChon a svg, .ThongTinTuyChon a .icon {
     width: 24px;
     height: 24px;
@@ -81,19 +83,14 @@ img {
     color: rgb(155, 155, 155);
 }
 
-.ThongTinTuyChon a {
-    color: rgb(74, 74, 74);
-}
-
 .ThongTinTuyChon a:hover {
     background: rgb(0, 127, 240);
     color: #fff;
 }
-
-.ThongTinSanPham {
-    display: flex;
-    flex: 1 1 0%;
+.ThongTinTuyChon a:hover .icon {
+    filter: invert(1);
 }
+
 h3 {
     display: block;
     font-size: 1.17em;
@@ -103,6 +100,19 @@ h3 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+
+
+/*button, input, optgroup, select, textarea {*/
+/*    font-family: inherit;*/
+/*    font-size: 100%;*/
+/*    line-height: 1.15;*/
+/*    margin: 0px;*/
+/*}*/
+
+.margin30 {
+    margin: 30px;
+}
+
 .HeaderThongtinsanpham {
     font-size: 19px;
     line-height: 21px;
@@ -136,6 +146,36 @@ h3 {
 .KhungThongTinSanPham .Khung-form input {
     flex: 1 1 0%;
 }
+.KhungThongTinSanPham .btn-them{
+    border: 0px;
+    width: 176px;
+    height: 40px;
+    border-radius: 4px;
+    color: rgb(74, 74, 74);
+    font-size: 14px;
+    background-color: rgb(253, 216, 53);
+    cursor: pointer;
+}
+.KhungThongTinSanPham .btn-capnhat{
+    border: 0px;
+    width: 176px;
+    height: 40px;
+    border-radius: 4px;
+    color: rgb(74, 74, 74);
+    font-size: 14px;
+    background-color: rgb(253, 216, 53);
+    cursor: pointer;
+    justify-content: flex-end;
+
+}
+.ThongTinSanPham {
+    display: flex;
+    flex: 1 1 0%;
+}
+.Khung-form .flex-btn  {
+    justify-content: center;
+    flex: 1 1 0%;
+}
 .TenSanPham {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
     border: 1px solid rgb(204, 204, 204);
@@ -164,44 +204,6 @@ h3 {
     border-color: black;
 }
 
-/*button, input, optgroup, select, textarea {*/
-/*    font-family: inherit;*/
-/*    font-size: 100%;*/
-/*    line-height: 1.15;*/
-/*    margin: 0px;*/
-/*}*/
-.KhungThongTinSanPham .btn-them{
-    border: 0px;
-    width: 176px;
-    height: 40px;
-    border-radius: 4px;
-    color: rgb(74, 74, 74);
-    font-size: 14px;
-    background-color: rgb(253, 216, 53);
-    cursor: pointer;
-}
-.KhungThongTinSanPham .btn-capnhat{
-    border: 0px;
-    width: 176px;
-    height: 40px;
-    border-radius: 4px;
-    color: rgb(74, 74, 74);
-    font-size: 14px;
-    background-color: rgb(253, 216, 53);
-    cursor: pointer;
-    justify-content: flex-end;
-
-}
-
-.margin30 {
-    margin: 30px;
-}
-
-.Khung-form .flex-btn  {
-    justify-content: center;
-    flex: 1 1 0%;
-}
-
 .MoTa {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
     border: 1px solid rgb(204, 204, 204);
@@ -223,7 +225,6 @@ h3 {
     outline: none;
     border-color: black;
 }
-
 .Giagiam {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
     border: 1px solid rgb(204, 204, 204);
@@ -233,4 +234,13 @@ h3 {
     line-height: 34px;
     outline: none;
     border-color: black;
+}
+
+ul .active {
+    background-color: #3498db;
+    color: #fff;
+}
+
+ul .active .icon{
+    filter: invert(1);
 }
