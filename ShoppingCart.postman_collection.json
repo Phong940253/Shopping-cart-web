@@ -110,10 +110,72 @@
 				{
 					"name": "Get User By Id",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost/api/user.php/get",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user.php",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "16769402530",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "456@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/user.php/edit",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user.php",
+								"edit"
+							]
 						}
 					},
 					"response": []
@@ -263,7 +325,8 @@
 								{
 									"key": "mobile",
 									"value": "01676940253",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "mobile",
