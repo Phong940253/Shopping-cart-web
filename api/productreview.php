@@ -10,30 +10,43 @@ class productreview extends restful_api
         parent::__construct();
     }
 
+    protected $thamso = [
+        "productId" => "",
+        "parentId" => "",
+        "title" => "",
+        "rating" => "",
+        "published" => "",
+        "createdAt" => "",
+        "publishedAt" => "",
+        "content" => ""
+    ];
+
     function create()
     {
         if ($this->method == "POST") {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $database = new DatabaseConnector();
             $now = date("Y-m-d H:i:s");
-            $published = empty($this->params["published"]) ? 1 : $this->params["published"];
-            $publishAt = ($published == 0) ? "NULL" : "'" . $now . "'";
-            $parentId = empty($this->params["parentId"]) ? "NULL" : $this->params["parentId"];
-            $query = "INSERT INTO product_review (productId, parentId, title, rating, published, createdAt, publishedAt, content, userId) VALUES ({$this->params['productId']}, {$parentId}, '{$this->params['title']}', {$this->params['rating']}, {$published}, '{$now}', {$publishAt}, '{$this->params['content']}', {$this->params['userId']})";
-            error_log(print_r($query, true));
-            try {
-                $result = $database->getConnection()->query($query);
-                if ($result) {
-                    $this->res["success"] = true;
-                    $this->res["message"] = "Create success!";
-                } else {
-                    $this->res["message"] = "ERROR: could not to insert product review, $query";
+            $this->thamso["published"] = empty($this->params["published"]) ? 1 : $this->params["published"];
+            $this->thamso["publishedAt"] = ($this->thamso["published"] == 0) ? "NULL" : "'" . $now . "'";
+            $query = "INSERT INTO product_review (";
+            foreach ($this->thamso as $key => $value) {
+                $query .= $key . ", ";
+                if ($key != "published" && $key != "publishedAt") {
+                    if ($key == "createdAt") {
+                        $this->thamso[$key] = "'{$now}'";
+                    } elseif ($key == "title" || $key == "content") {
+                        $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "'{$this->params[$key]}'";
+                    } else {
+                        $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "{$this->params[$key]}";
+                    }
                 }
-            } catch (Exception $e) {
-                error_log(print_r($e->getMessage(), true));
-                $this->response(500, $this->res);
             }
-            $this->response(201, $this->res);
+            $query = substr($query, 0,-2) . ") VALUE (";
+            foreach ($this->thamso as $value) {
+                $query .= "{$value}, ";
+            }
+            $query = substr($query, 0,-2) . ")";
+            $this->_submmit_create_query($query);
         }
     }
 
