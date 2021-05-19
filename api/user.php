@@ -2,7 +2,7 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/DatabaseConnector.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/api/restfull.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/api/restful.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/api/encryptPassword.php";
 
 use \Firebase\JWT\JWT;
@@ -14,14 +14,46 @@ class user extends restful_api
         parent::__construct();
     }
 
+    protected $thamso = [
+        "firstName" => "",
+        "middleName" => "",
+        "lastName" => "",
+        "mobile" => "",
+        "email" => "",
+        "passwordHash" => "",
+        "admin" => "",
+        "vendor" => "",
+        "registeredAt" => "",
+        "intro" => "",
+        "profile" => "",
+        "gender" => ""
+    ];
     function create()
     {
         if ($this->method == "POST") {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $database = new DatabaseConnector();
-            $passwordHash = encrypt($this->params["passwordHash"]);
-            $query = "INSERT INTO user (firstName, middleName, lastName, mobile, email, passwordHash, admin, vendor, registeredAt, intro, profile) VALUES ('" . $this->params['firstName'] . "', '" . $this->params['middleName'] . "', '" . $this->params['lastName'] . "', '" . $this->params['mobile'] . "', '" . $this->params['email'] . "', '" . $passwordHash . "', '" . $this->params['admin'] . "', '" . $this->params['vendor'] . "', '" . date("Y-m-d H:i:s") . "', '" . $this->params['intro'] . "', '" . $this->params['profile'] . "')";
+            $query = "INSERT INTO user (";
+            foreach ($this->thamso as $key => $value) {
+                $query .= $key . ", ";
+                if ($key == "registeredAt") {
+                    $now = date("Y-m-d H:i:s");
+                    $this->thamso[$key] = "'{$now}'";
+                } elseif ($key == "passwordHash") {
+                    $passwordEncrypt = encrypt($this->params["passwordHash"]);
+                    $this->thamso[$key] = "'{$passwordEncrypt}'";
+                } elseif ($key == "admin" || $key == "vendor" || $key == "gender") {
+                    $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "{$this->params[$key]}";
+                } else {
+                    $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "'{$this->params[$key]}'";
+                }
+            }
+            $query = substr($query, 0,-2) . ") VALUE (";
+            foreach ($this->thamso as $value) {
+                $query .= "{$value}, ";
+            }
+            $query = substr($query, 0,-2) . ")";
             try {
+                $database = new DatabaseConnector();
                 $result = $database->getConnection()->query($query);
                 if ($result) {
                     $this->res["success"] = true;
@@ -81,21 +113,20 @@ class user extends restful_api
     function edit()
     {
         if ($this->method == "POST") {
-            if (!empty($this->params["password"])) {
+            if (!is_null($this->params["password"])) {
                 $this->params["passwordHash"] = encrypt($this->params["password"]);
                 unset($this->params["password"]);
             }
             $query = "UPDATE user SET";
             $dem = 0;
-            foreach ($this->params as $param) {
-                if (!empty($param)) {
-                    $key = array_search($param, $this->params);
+            foreach ($this->params as $key => $value) {
+                if (!is_null($value)) {
                     if ($key != "id") {
                         if ($key == "admin" || $key == "vendor") {
-                            $query .= " {$key}={$param},";
+                            $query .= " {$key}={$key},";
                             $dem++;
                         } else {
-                            $query .= " {$key}='{$param}',";
+                            $query .= " {$key}='{$key}',";
                             $dem++;
                         }
                     }
