@@ -52,7 +52,7 @@ class user extends restful_api
                 $query .= "{$value}, ";
             }
             $query = substr($query, 0,-2) . ")";
-            $this->_submmit_create_query($query);
+            $this->_submit_create_query($query);
         }
     }
 

@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/api/restful.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/database/DatabaseConnector.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 
-class productreview extends restful_api
+class productReview extends restful_api
 {
     function __construct()
     {
@@ -26,7 +26,7 @@ class productreview extends restful_api
         if ($this->method == "POST") {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $now = date("Y-m-d H:i:s");
-            $this->thamso["published"] = empty($this->params["published"]) ? 1 : $this->params["published"];
+            $this->thamso["published"] = is_null($this->params["published"]) ? 1 : $this->params["published"];
             $this->thamso["publishedAt"] = ($this->thamso["published"] == 0) ? "NULL" : "'" . $now . "'";
             $query = "INSERT INTO product_review (";
             foreach ($this->thamso as $key => $value) {
@@ -46,17 +46,17 @@ class productreview extends restful_api
                 $query .= "{$value}, ";
             }
             $query = substr($query, 0,-2) . ")";
-            $this->_submmit_create_query($query);
+            $this->_submit_create_query($query);
         }
     }
 
     function getBy()
     {
         if ($this->method == "GET") {
-            $query = "select * from product_review where";
+            $query = "select * from product_category where";
             $dem = 0;
             foreach ($this->params as $key => $value) {
-                if (!empty($value)) {
+                if (!is_null($value)) {
                     if ($key == "title" || $key == "createdAt" || $key == "publishedAt" || $key == "content") {
                         $query .= " {$key}='{$value}' and";
                         $dem++;
@@ -69,7 +69,7 @@ class productreview extends restful_api
             if ($dem > 0) {
                 $query = substr($query, 0, -3);
             } else {
-                $query = "select * from product_review";
+                $query = "select * from product_category";
             }
             $this->_submit_search_query($query);
         }
@@ -86,4 +86,4 @@ class productreview extends restful_api
     }
 }
 
-$productreview = new productreview();
+$productreview = new productReview();
