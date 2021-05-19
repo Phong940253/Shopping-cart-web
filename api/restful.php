@@ -118,7 +118,7 @@ class restful_api
             $this->response(500, "Unknown endpoint");
         }
     }
-    protected function _submmit_create_query($query) {
+    protected function _submit_create_query($query) {
         try {
             $database = new DatabaseConnector();
             $result = $database->getConnection()->query($query);
@@ -132,6 +132,22 @@ class restful_api
             $this->response(500, $this->res);
         }
         $this->response(201, $this->res);
+    }
+
+    protected function _submit_search_query($query) {
+        $database = new DatabaseConnector();
+        $this->res["data"] = array();
+        $result = $database->getConnection()->query($query);
+        try {
+            while ($row = $result->fetch_assoc()) {
+                $this->res["data"][] = $row;
+            }
+            $this->res["success"] = true;
+            $this->res["message"] = "Search success!";
+        } catch (Exception $e) {
+            $this->response(500, $this->res);
+        }
+        $this->response(200, $this->res);
     }
 }
 ?>
