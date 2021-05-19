@@ -2,7 +2,8 @@
 ### Dependency Management
 - Composer
 
-install `composer install`
+Download and install composer in [here](https://getcomposer.org/download/).
+Then install library by command `composer install`
 ### Database
 - MySQL
 ### Framework
