@@ -1,5 +1,6 @@
 <?php
-require_once '../vendor/autoload.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/database/DatabaseConnector.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 class restful_api
 {
     protected $method   = '';
@@ -116,6 +117,21 @@ class restful_api
         } else {
             $this->response(500, "Unknown endpoint");
         }
+    }
+    protected function _submmit_create_query($query) {
+        try {
+            $database = new DatabaseConnector();
+            $result = $database->getConnection()->query($query);
+            if ($result) {
+                $this->res["success"] = true;
+                $this->res["message"] = "Create success!";
+            } else {
+                $this->res["message"] = "ERROR: could not to insert , $query";
+            }
+        } catch (Exception $e) {
+            $this->response(500, $this->res);
+        }
+        $this->response(201, $this->res);
     }
 }
 ?>

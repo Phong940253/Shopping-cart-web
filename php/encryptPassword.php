@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 
 function encrypt($string) {
     $method = "aes-256-ctr";
