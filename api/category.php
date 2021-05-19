@@ -36,7 +36,7 @@ class category extends restful_api
                 $query .= "{$value}, ";
             }
             $query = substr($query, 0, -2) . ")";
-            $this->_submmit_create_query($query);
+            $this->_submit_create_query($query);
         }
     }
 
@@ -46,7 +46,7 @@ class category extends restful_api
             $query = "select * from category where";
             $dem = 0;
             foreach ($this->params as $key => $value) {
-                if (!empty($value)) {
+                if (!is_null($value)) {
                     if ($key == "parentId") {
                         $query .= " {$key}={$value} and";
                         $dem++;
