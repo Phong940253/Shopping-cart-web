@@ -15,25 +15,24 @@ body {
     background: rgb(239, 239, 239);
 }
 .PhanChung {
-    padding-left: 30px;
-    padding-right:15px;
     margin-right: 0px;
     margin-left: 0px;
     background: rgb(239, 239, 239);
 }
 .KhungChung {
-    padding-right: 15%;
-    padding-left: 5%;
     display: flex;
     width: 100%;
-    margin:  20px;
+    margin: 0px auto 20px;
     flex-wrap: wrap;
-    flex: 1;
-    justify-content: center;
+}
+.ThungChua {
+    width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .MucTuyChon {
-    /*display: flex;*/
-    /*flex: 1;*/
     margin-right: 17px;
 }
 .TenNguoiDung {
@@ -102,13 +101,6 @@ h3 {
 }
 
 
-/*button, input, optgroup, select, textarea {*/
-/*    font-family: inherit;*/
-/*    font-size: 100%;*/
-/*    line-height: 1.15;*/
-/*    margin: 0px;*/
-/*}*/
-
 .margin30 {
     margin: 30px;
 }
@@ -119,34 +111,35 @@ h3 {
     font-weight: 300;
     margin: 20px 0px 15px;
 }
-.KhungThongTinSanPham {
+.KhungThongTinTaiKhoan {
     background-color: rgb(255, 255, 255);
     padding: 60px 20px;
     flex: 1 1 0%;
     display: flex;
 }
-.KhungThongTinSanPham .Khung-form{
+.KhungThongTinTaiKhoan .Khung-form{
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     margin: 0px 0px 15px;
-}
-.KhungThongTinSanPham .input-label {
-    width: 110px;
     min-width: 110px;
-    font-size: 15px;
+}
+.KhungThongTinTaiKhoan .input-label {
+    width: 150px;
+    min-width: 110px;
+    font-size: 16px;
     color: rgb(51, 51, 51);
 }
-.KhungThongTinSanPham .Khung-form > div {
+.KhungThongTinTaiKhoan .Khung-form > div {
     display: flex;
     flex: 1 1 0%;
     position: relative;
     z-index: 1;
 }
-.KhungThongTinSanPham .Khung-form input {
+.KhungThongTinTaiKhoan .Khung-form input {
     flex: 1 1 0%;
 }
-.KhungThongTinSanPham .btn-them{
+.KhungThongTinTaiKhoan .btn-them{
     border: 0px;
     width: 176px;
     height: 40px;
@@ -156,7 +149,7 @@ h3 {
     background-color: rgb(253, 216, 53);
     cursor: pointer;
 }
-.KhungThongTinSanPham .btn-capnhat{
+.KhungThongTinTaiKhoan .btn-capnhat{
     border: 0px;
     width: 176px;
     height: 40px;
@@ -168,8 +161,8 @@ h3 {
     justify-content: flex-end;
 
 }
-.ThongTinSanPham {
-    display: flex;
+.Khung-ben-phai {
+    display: block;
     flex: 1 1 0%;
 }
 .Khung-form .flex-btn  {
@@ -243,4 +236,26 @@ ul .active {
 
 ul .active .icon{
     filter: invert(1);
+}
+
+a {
+    cursor: pointer;
+}
+
+.Khung-dien {
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 34px;
+    outline: none;
+    width: 50px;
+}
+
+.Khung-ben-phai .label {
+    font-size: 19px;
+    line-height: 21px;
+    font-weight: 300;
+    margin: 20px 0px 15px;
 }
