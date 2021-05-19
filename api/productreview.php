@@ -71,19 +71,7 @@ class productreview extends restful_api
             } else {
                 $query = "select * from product_review";
             }
-            $database = new DatabaseConnector();
-            $this->res["data"] = array();
-            $result = $database->getConnection()->query($query);
-            try {
-                while ($row = $result->fetch_assoc()) {
-                    $this->res["data"][] = $row;
-                }
-                $this->res["success"] = true;
-                $this->res["message"] = "Search success!";
-            } catch (Exception $e) {
-                $this->response(500, $this->res);
-            }
-            $this->response(200, $this->res);
+            $this->_submit_search_query($query);
         }
     }
 
