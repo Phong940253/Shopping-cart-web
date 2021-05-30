@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "2e107e50-9698-4e0b-b4d2-964c6a5d2e0e",
 		"name": "ShoppingCart",
+		"description": "#### All API for Shopping Cart System  \nAlmost return:  \n- success (bool): true|false,  \n- message (string): \"message\",  \n- data (array): [].\n\n#### Allow NULL parameter",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -23,7 +24,8 @@
 								"user.php",
 								"getall"
 							]
-						}
+						},
+						"description": "###"
 					},
 					"response": []
 				},
@@ -38,56 +40,68 @@
 								{
 									"key": "firstName",
 									"value": "Nguyen",
+									"contentType": "strin",
+									"description": "(optional) firstname",
 									"type": "text"
 								},
 								{
 									"key": "middleName",
 									"value": "Van",
+									"description": "(optional) middleame",
 									"type": "text"
 								},
 								{
 									"key": "lastName",
 									"value": "Phong",
+									"description": "(optional) lastname",
 									"type": "text"
 								},
 								{
 									"key": "mobile",
-									"value": "123123123",
+									"value": "",
+									"description": "(optional) telephone",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "123@gmail.com",
+									"value": "ttphuongvi@gmail.com",
+									"description": "(optional) email",
 									"type": "text"
 								},
 								{
 									"key": "passwordHash",
 									"value": "123",
+									"description": "(optional) passhword no encrypt",
 									"type": "text"
 								},
 								{
 									"key": "admin",
-									"value": "1",
+									"value": "0",
+									"description": "(required) 1: admin, default: 0",
 									"type": "text"
 								},
 								{
 									"key": "vendor",
 									"value": "0",
-									"type": "text"
-								},
-								{
-									"key": "registeredAt",
-									"value": "2021-10-10",
+									"description": "(required) 1: vendor, default: 0",
 									"type": "text"
 								},
 								{
 									"key": "intro",
-									"value": "none",
+									"value": "",
+									"description": "(optional) The brief introduction of the Vendor User to be displayed on the Product Page.",
 									"type": "text"
 								},
 								{
 									"key": "profile",
 									"value": "none",
+									"description": "(optional) The vendor details to be displayed on the Product Page.",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"description": "(optional) 0: male, 1: female",
 									"type": "text"
 								}
 							]
@@ -102,8 +116,7 @@
 								"user.php",
 								"create"
 							]
-						},
-						"description": "POST user"
+						}
 					},
 					"response": []
 				},
@@ -146,22 +159,24 @@
 							"formdata": [
 								{
 									"key": "id",
-									"value": "4",
+									"value": "2",
 									"type": "text"
 								},
 								{
 									"key": "mobile",
 									"value": "16769402530",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "email",
 									"value": "456@gmail.com",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "password",
-									"value": "1234",
+									"value": "123",
 									"type": "text"
 								}
 							]
@@ -210,7 +225,7 @@
 								},
 								{
 									"key": "slug",
-									"value": "tai nghe nhet tai phien ban 2",
+									"value": "tai nghe nhet tai phien ban 3",
 									"type": "text"
 								},
 								{
@@ -312,6 +327,99 @@
 			]
 		},
 		{
+			"name": "Product Review",
+			"item": [
+				{
+					"name": "Create Product Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "parentId",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Tệ",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "published",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Cũng ngon mà",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/productreview.php/create",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"productreview.php",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Review By Param",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/productreview.php/getBy?id=3&userId=2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"productreview.php",
+								"getBy"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								},
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Login & Author",
 			"item": [
 				{
@@ -325,8 +433,7 @@
 								{
 									"key": "mobile",
 									"value": "01676940253",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "mobile",
@@ -360,12 +467,12 @@
 							"formdata": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								},
 								{
-									"key": "passwordHash",
-									"value": "hello",
+									"key": "password",
+									"value": "123",
 									"type": "text"
 								}
 							]
@@ -381,6 +488,124 @@
 								"autho"
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Creaet Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Tai nghe nhét tai",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "tai nghe nhet tai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/category.php/create",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"category.php",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By Param",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/category.php/getBy",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"category.php",
+								"getBy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Category",
+			"item": [
+				{
+					"name": "Create Product Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/productCategory.php/create",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"productCategory.php",
+								"create"
+							]
+						},
+						"description": "### Create Product Category:\n#### All param:\n- productId (required): Id for product.\n- categorryId (required): Id for category."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Category By Param",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/productCategory.php/getBy",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"productCategory.php",
+								"getBy"
+							]
+						},
+						"description": "### Get Product Category By Param:\n#### All param:\n- productId (optional): Id for product.\n- categorryId (optional): Id for category.\n- None Parameter: Get All Product Category."
 					},
 					"response": []
 				}

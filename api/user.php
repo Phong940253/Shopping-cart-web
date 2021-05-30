@@ -1,9 +1,9 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/DatabaseConnector.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/database/DatabaseConnector.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/api/restful.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/api/encryptPassword.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/php/encryptPassword.php";
 
 use \Firebase\JWT\JWT;
 
@@ -52,19 +52,7 @@ class user extends restful_api
                 $query .= "{$value}, ";
             }
             $query = substr($query, 0,-2) . ")";
-            try {
-                $database = new DatabaseConnector();
-                $result = $database->getConnection()->query($query);
-                if ($result) {
-                    $this->res["success"] = true;
-                    $this->res["message"] = "Create success!";
-                } else {
-                    $this->res["message"] = "ERROR: could not to insert user, $query";
-                }
-            } catch (Exception $e) {
-                $this->response(500, $this->res);
-            }
-            $this->response(201, $this->res);
+            $this->_submit_create_query($query);
         }
     }
 
