@@ -246,11 +246,11 @@ a {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
     border: 1px solid rgb(204, 204, 204);
     border-radius: 4px;
-    height: 34px;
+    margin-left: -25px;
     padding: 6px 12px;
     line-height: 34px;
     outline: none;
-    width: 50px;
+
 }
 
 .Khung-ben-phai .label {
@@ -258,4 +258,223 @@ a {
     line-height: 21px;
     font-weight: 300;
     margin: 20px 0px 15px;
+}
+button {
+    margin: 40px;
+}
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+.btn-7 {
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-7 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.btn-7:before,
+.btn-7:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.btn-7:before{
+    height: 0%;
+    width: 2px;
+}
+.btn-7:after {
+    width: 0%;
+    height: 2px;
+}
+.btn-7:hover{
+    color: rgba(251,75,2,1);
+    background: transparent;
+}
+.btn-7:hover:before {
+    height: 100%;
+}
+.btn-7:hover:after {
+    width: 100%;
+}
+.btn-7 span:before,
+.btn-7 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.btn-7 span:before {
+    width: 2px;
+    height: 0%;
+}
+.btn-7 span:after {
+    height: 2px;
+    width: 0%;
+}
+.btn-7 span:hover:before {
+    height: 100%;
+}
+.btn-7 span:hover:after {
+    width: 100%;
+}
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    /*margin: 1em;*/
+    max-width: 350px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+}
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: 400;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input__label {
+    display: inline-block;
+    float: right;
+    /*padding: 0 1em;*/
+    width: 40%;
+    color: #696969;
+    font-weight: bold;
+    font-size: 70.25%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.input__label-content {
+    position: relative;
+    display: block;
+    padding: 1.6em 0;
+    width: 100%;
+}
+
+.graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+}
+.icon {
+    color: #ddd;
+    font-size: 150%;
+}
+.input--shoko {
+    overflow: hidden;
+    padding-bottom: 2.5em;
+}
+
+.input__field--shoko {
+    padding: 0;
+    margin-top: 1.2em;
+    width: 100%;
+    background: transparent;
+    color: #000;
+    font-size: 1.55em;
+}
+
+.input__label--shoko {
+    position: absolute;
+    top: 2em;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #A09C9C;
+    pointer-events: none;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transition: -webkit-transform 0.2s 0.1s, color 0.3s;
+    transition: transform 0.2s 0.1s, color 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.graphic--shoko {
+    stroke: #A09C9C;
+    pointer-events: none;
+    stroke-width: 2px;
+    top: 1.25em;
+    bottom: 0px;
+    height: 3.275em;
+    -webkit-transition: -webkit-transform 0.7s, stroke 0.7s;
+    transition: transform 0.7s, stroke 0.7s;
+    -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.input__field--shoko:focus + .input__label--shoko,
+.input--filled .input__label--shoko {
+    color: #A58282;
+    -webkit-transform: translate3d(0, 3.5em, 0) scale3d(0.85, 0.85, 1);
+    transform: translate3d(0, 3.5em, 0) scale3d(0.85, 0.85, 1);
+}
+
+.input__field--shoko:focus ~ .graphic--shoko,
+.input--filled .graphic--shoko {
+    stroke: #A58282;
+    -webkit-transform: translate3d(-66.6%, 0, 0);
+    transform: translate3d(-66.6%, 0, 0);
+}
+.content {
+    font-size: 150%;
+    /*padding: 3em 0;*/
 }
