@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 echo '
 <div class="header">
     <div class="container">
@@ -67,92 +67,7 @@ echo '
     </div>
     <div class="bottom_root"></div>
 </div>
-<script>
-    $(document).ready(function(){
-        $(".header-account-container").click(function(){
-            $("#login-with-phone").load("/modules/login/login-with-phone.html")
-            $("#login-with-email").empty();
-            $("#login-with-pass").empty();
-            $("div.loader").empty();
-            $(".overlay").css("visibility", "visible");    
-        })
-        // hien menu dang nhap
-
-        $(".btn-close").click(function () {
-            $(".overlay").css("visibility", "collapse");
-            $("#login-with-phone").empty();
-            $("#login-with-email").empty();
-            $("#login-with-pass").empty();
-            $("div.loader").empty();
-        })
-        // dong menu dang nhap
-
-        $(".style-login-with-phone").on("click", ".login-with-email", function () {
-            $("#login-with-email").load("/modules/login/login-with-email.html");
-            $("#login-with-phone").empty();
-            $("#login-with-pass").empty();
-        })
-        // mo dang nhap voi email
-
-        $("#login-with-email, #login-with-pass").on("click", ".btn-action", function () {
-            $("#login-with-phone").load("/modules/login/login-with-phone.html")
-            $("#login-with-email").empty();
-            $("#login-with-pass").empty();
-        })
-        // mo dang nhap voi dien thoai
-
-        $("#login-with-email, #login-with-pass").on("click", ".show-password, .hide-password", function () {
-            var passwordId = $(this).parents(\'div:first\').find(\'input\').attr(\'id\');
-            console.log(passwordId);
-            if ($(this).hasClass(\'show-password\')) {
-                $("#" + passwordId).attr("type", "text");
-                $(this).parent().find(".show-password").hide();
-                $(this).parent().find(".hide-password").show();
-            } else {
-                $("#" + passwordId).attr("type", "password");
-                $(this).parent().find(".hide-password").hide();
-                $(this).parent().find(".show-password").show();
-            }
-        })
-        // an hien password
-        
-        $("#login-with-phone").on("submit", "#submitPhoneForm", function (e) {
-            $("div.loader").load("/modules/load/loader.html")
-            e.preventDefault(); // avoid to execute the actual submit of the form.
-            let form = $("#submitPhoneForm");
-            let url = form.attr("action");
-            $("#login-with-phone").empty()
-            $.ajax({
-                type: form.attr("method"),
-                url: url,
-                data: form.serialize()
-            }).always(function(data) {
-                $("#login-with-email").empty();
-                $("#login-with-phone").empty();
-                $("div.loader").empty();
-                console.log(data);
-                let reponse = data;
-                if (reponse["success"]) {
-                    $("#login-with-pass").load("/modules/login/login-with-pass.html", () => {
-                        $("div.heading p b").text(reponse.data.mobile);
-                        $("#login-with-pass").on("submit", "#submitFormPassword", (e) => {
-                             e.preventDefault();
-                             let passwordHash = $("#submitFormPassword div.input input").val();
-                             if (passwordHash == reponse["data"]["0"]["passwordHash"]) {
-                                 setCookie("")
-                             }
-                        });
-                    });
-                } else {
-                    $("#login-with-pass").load("/modules/login/login-with-pass.html");
-                    alert("Failed!");
-                }
-            });
-        });
-            
-        
-    });
-</script>
+<script type="text/javascript" src="/js/login.js">
 <div class="overlay">
     <div class="overlay-content">
         <div class="overlay-root">

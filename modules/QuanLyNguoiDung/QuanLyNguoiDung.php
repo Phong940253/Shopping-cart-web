@@ -32,7 +32,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
         $(".Thong-tin-tai-khoan").click(function () {
             $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html")
         })
-
+        $(".Quan-ly-don-hang").click(function () {
+            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/QuanLyDonHang.html")
+        })
     });
 
 
