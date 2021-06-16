@@ -7,7 +7,7 @@ echo '
             <div class="middle_left_container">
                 <div class="logo_menu">
                     <div class="style_logo">
-                        <a class="logo no-underline">
+                       <a class="logo no-underline">
                             <b class="logo no-underline">
                                 SHOP
                             </b>

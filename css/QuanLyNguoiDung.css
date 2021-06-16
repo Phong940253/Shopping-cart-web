@@ -118,15 +118,16 @@ h3 {
 /*Tai-Khoan*/
 .KhungThongTinTaiKhoan {
     background-color: rgb(255, 255, 255);
-    padding: 60px 20px;
+    padding: 20px 20px;
     flex: 1 1 0%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .KhungThongTinTaiKhoan .Khung-form{
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    margin: 0px 0px 15px;
     min-width: 110px;
     justify-content: space-evenly;
 }
