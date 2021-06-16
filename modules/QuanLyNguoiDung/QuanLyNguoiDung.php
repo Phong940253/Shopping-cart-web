@@ -16,7 +16,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
 ?>
 <script>
     $(document).ready(function () {
-        $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html");
+        $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Thongbao.html");
         $(".ThongTinTuyChon li a[class!='active']").click((e) => {
             $(".ThongTinTuyChon li .active").toggleClass("active");
             if (e.target.nodeName != "A") {
