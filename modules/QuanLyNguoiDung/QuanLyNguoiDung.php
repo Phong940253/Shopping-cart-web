@@ -35,6 +35,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
         $(".Quan-ly-don-hang").click(function () {
             $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/QuanLyDonHang.html")
         })
+        $(".Dia-chi").click(function () {
+            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Diachi.html")
+        })
     });
 
 
@@ -42,6 +45,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
     //     $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Thongbao.html");
     // });
 </script>
+<script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'/>
+<script src="/js/Diachi.js"></script>
 <div class="PhanChung">
     <div class="ThungChua">
         <div class="KhungChung">
@@ -129,5 +134,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php';
 ?>
+
 </body>
 </html>
