@@ -224,7 +224,7 @@ class user extends restful_api
                 $this->response(200, $this->res);
             }
             $this->res["message"] = "ERROR: wrong password!";
-            $this->response(401, $this->res);
+            $this->response(200, $this->res);
         }
     }
 }

@@ -109,18 +109,30 @@ $(document).ready(() => {
           $("div.heading p b").text(reponse.data.mobile);
           $("#login-with-pass").on("submit", "#submitFormPassword", (e) => {
             $("div.loader").load("/modules/load/loader.html");
-            $("#login-with-pass").empty();
             e.preventDefault();
             // create from data
-            console.log(reponse.data.id);
-            const data = new FormData($("#submitFormPassword"));
-            data.append(JSON.stringify({id: reponse.data.id}));
+            const data = new FormData($("#submitFormPassword")[0]);
+            $("#login-with-pass").empty();
+            data.append("id", reponse.data.id);
+            console.log(data);
             $.ajax({
-              type: form.attr("method"),
-              url,
-              data,
+              type: "POST",
+              url: "/api/user.php/autho",
+              processData: false,
+              contentType: false,
+              data: data,
             }).then((reponse) => {
-              alert(reponse.success ? "Đăng nhập thành công!" : "sai tài khoản hoặc mặt khẩu!");
+              $("div.loader").empty();
+              if (reponse.success) {
+                alert("Đăng nhập thành công!");
+              } else {
+                alert("sai tài khoản hoặc mặt khẩu!");
+              }
+            }).catch((e) => {
+              alert("Có lỗi với hệ thống");
+              $("div.loader").empty();
+              $("#login-with-pass").load("/modules/login/login-with-pass.html");
+              console.log(e);
             });
           });
         });
@@ -128,6 +140,10 @@ $(document).ready(() => {
         $("#login-with-phone").load("/modules/login/login-with-phone.html");
         alert("Không tồn tại tài khoản!");
       }
+    }).catch((e)=> {
+      $("div.loader").empty();
+      $("#login-with-phone").load("/modules/login/login-with-phone.html");
+      console.log(e);
     });
   });
 });
