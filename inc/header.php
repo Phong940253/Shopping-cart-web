@@ -67,7 +67,6 @@ echo '
     </div>
     <div class="bottom_root"></div>
 </div>
-<script type="text/javascript" src="/js/login.js">
 <div class="overlay">
     <div class="overlay-content">
         <div class="overlay-root">
