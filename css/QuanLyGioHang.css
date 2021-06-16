@@ -1,0 +1,211 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+div {
+    display: block;
+}
+html {
+    line-height: 1.15;
+    text-size-adjust: 100%;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: rgb(239, 239, 239);
+}
+.PhanChung {
+    width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.ChuY .messages {
+    margin: 10px 0px 0px;
+}
+.ChuY .messages__inner {
+    background-color: rgb(232, 246, 255);
+    border: 1px solid rgb(27, 168, 255);
+    padding: 17px 15px;
+    border-radius: 4px;
+    margin: 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+svg {
+    width: 18px;
+    height: 18px;
+}
+svg:not(:root) {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+p {
+    margin-left:  10px;
+}
+g {
+    fill: none;
+    fill-rule: evenodd;
+}
+
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+
+path fill {
+    fill: rgb(226, 235, 246);
+    d: path("M 10 18.77 c -4.835 0 -8.77 -3.935 -8.77 -8.77 c 0 -4.835 3.935 -8.77 8.77 -8.77 c 4.835 0 8.77 3.935 8.77 8.77 c 0 4.835 -3.935 8.77 -8.77 8.77 Z");
+    fill: rgb(13, 92, 182);
+    d: path("M 10.115 8.72 c 0.34 0 0.616 0.276 0.616 0.616 v 5.23 a 0.616 0.616 0 0 1 -1.231 0 v -5.23 c 0 -0.34 0.276 -0.615 0.615 -0.615 Z m 0.044 -3.737 a 1.03 1.03 0 1 1 0 2.059 a 1.03 1.03 0 0 1 0 -2.059 Z");
+    fill: rgb(13, 92, 182);
+    d: path("M 10 0 C 4.486 0 0 4.486 0 10 s 4.486 10 10 10 s 10 -4.486 10 -10 S 15.514 0 10 0 Z");
+}
+.ChuY .messages__text {
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    color: rgb(13, 92, 182);
+    width: calc(100% - 40px);
+}
+.GioHang {
+    margin: 20px 0px 100px;
+}
+.GioHang h2 {
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+    margin: 0px 0px 15px;
+    font-weight: 400;
+}
+.GioHang h2 span {
+    font-size: 14px;
+    font-weight: 300;
+    display: inline-block;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.GioHang .Rong {
+    background: rgb(255, 255, 255);
+    padding: 40px 20px;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+}
+.GioHang {
+    margin: 20px 0px 100px;
+}
+.StyledCartBuyLater {
+    margin: 40px 0px;
+}
+.StyledCartBuyLater .title {
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.StyledCartBuyLater .buylater-inner {
+    background: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+.StyledCartBuyLater .buylater__products {
+    margin: 0px;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    list-style: none;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.StyledCartBuyLater .buylater__link {
+    text-align: center;
+    margin: 0px;
+    padding: 12px 0px;
+}
+p {
+    margin: 0px 0px 10px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.StyledCartBuyLater .buylater__link a {
+    display: inline-block;
+    color: rgb(27, 168, 255);
+}
+a {
+    background-color: White;
+
+    color: rgb(0, 127, 240);
+     text-decoration: none;
+
+ }
+.CartCollection {
+    margin-bottom: 50px;
+}
+.CartCollection .collection__title {
+    color: rgb(51, 51, 51);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0px 0px 12px;
+}
+.CartCollection .collection-wrap {
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.Slider__Wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.Slider__Wrapper .slick-list {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.Slider__Wrapper .slick-track {
+    display: flex;
+}
+ .Slider__Wrapper.slick-slide {
+    height: auto;
+}
+.Slider__Wrapper .collection__element {
+    padding: 10px 10px 45px;
+    position: relative;
+    height: 100%;
+}
+.CartCollection .collection__inner {
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+a {
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+}
+.qixAr {
+    width: 100%;
+    opacity: 0;
+}
+
+

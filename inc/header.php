@@ -90,7 +90,7 @@ echo '
         $(".style-login-with-phone").on("click", ".login-with-email", function () {
             $("#login-with-email").load("/modules/login/login-with-email.html");
             $("#login-with-phone").empty();
-            $("#login-with-phone").empty();
+            $("#login-with-pass").empty();
         })
         // mo dang nhap voi email
 
@@ -130,10 +130,11 @@ echo '
                 $("#login-with-email").empty();
                 $("#login-with-phone").empty();
                 $("div.loader").empty();
-                let reponse = JSON.parse(data.responseText.substring(5));
+                console.log(data);
+                let reponse = data;
                 if (reponse["success"]) {
                     $("#login-with-pass").load("/modules/login/login-with-pass.html", () => {
-                        $("div.heading p b").text(reponse["data"]["0"]["mobile"]);
+                        $("div.heading p b").text(reponse.data.mobile);
                         $("#login-with-pass").on("submit", "#submitFormPassword", (e) => {
                              e.preventDefault();
                              let passwordHash = $("#submitFormPassword div.input input").val();

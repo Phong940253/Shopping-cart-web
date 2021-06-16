@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/api/restfull.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/DatabaseConnector.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/api/restful.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/database/DatabaseConnector.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 
 class product extends restful_api
@@ -10,25 +10,49 @@ class product extends restful_api
         parent::__construct();
     }
 
+    protected $thamso = [
+        "userId" => "",
+        "title" => "",
+        "metaTitle" => "",
+        "slug" => "",
+        "type" => "",
+        "sku" => "",
+        "price" => "",
+        "discount" => "",
+        "quantity" => "",
+        "shop" => "",
+        "createdAt" => "",
+        "updatedAt" => "",
+        "publishedAt" => "",
+        "startsAt" => "",
+        "endsAt" => "",
+        "content" => ""
+    ];
+
     function create()
     {
         if ($this->method == "POST") {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $database = new DatabaseConnector();
-            $query = "INSERT INTO product (userId, title, metaTitle, slug, summary, type, sku, price, discount, quantity, shop, createdAt, startsAt, endsAt, content) VALUES (" . $this->params['userId'] . ", '" . $this->params['title'] . "', '" . $this->params['metaTitle'] . "', '" . $this->params['slug'] . "', '" . $this->params['summary'] . "', " . $this->params['type'] . ", '" . $this->params['sku'] . "', " . $this->params['price'] . ", " . $this->params['discount'] . ", " . $this->params['quantity'] . ", " . $this->params['shop'] . ", '" . date("Y-m-d H:i:s") . "', '" . $this->params['startsAt'] . "', '" . $this->params['endsAt'] . "', '" . $this->params['content'] . "')";
-            try {
-                $result = $database->getConnection()->query($query);
-                if ($result) {
-                    $this->res["success"] = true;
-                    $this->res["message"] = "Create success!";
-                } else {
-                    $this->res["message"] = "ERROR: could not to insert user, $query";
+            $query = "INSERT INTO product (";
+            $now = date("Y-m-d H:i:s");
+            $this->thamso["createdAt"] = "'{$now}'";
+            $this->thamso["updatedAt"] = "'{$now}'";
+            foreach ($this->thamso as $key => $value) {
+                $query .= $key . ", ";
+                if ($key != "createdAt" && $key != "updatedAt") {
+                    if ($key == "userId" || $key == "type" || $key == "quantity" || $key == "shop") {
+                        $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "{$this->params[$key]}";
+                    } else {
+                        $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "'{$this->params[$key]}'";
+                    }
                 }
-            } catch (Exception $e) {
-                error_log(print_r($e->getMessage(), true));
-                $this->response(500, $this->res);
             }
-            $this->response(201, $this->res);
+            $query = substr($query, 0,-2) . ") VALUE (";
+            foreach ($this->thamso as $value) {
+                $query .= "{$value}, ";
+            }
+            $query = substr($query, 0,-2) . ")";
+            $this->_submit_create_query($query);
         }
     }
 

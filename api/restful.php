@@ -1,5 +1,6 @@
 <?php
-require_once '../vendor/autoload.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/database/DatabaseConnector.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 class restful_api
 {
     protected $method   = '';
@@ -79,12 +80,9 @@ class restful_api
         header("Access-Control-Allow-Methods: *");
 
         $this->params = explode('/', trim($_SERVER['PATH_INFO'], '/'));
-        echo $this->params;
         $this->endpoint = array_shift($this->params);
-
         $method = $_SERVER['REQUEST_METHOD'];
         $allow_method = array('GET', 'POST', 'PUT', 'DELETE');
-
         if (in_array($method, $allow_method)) {
             $this->method = $method;
         }
@@ -95,6 +93,9 @@ class restful_api
                 break;
 
             case 'GET':
+                $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                $parts = parse_url($actual_link);
+                parse_str($parts['query'], $this->params);
                 break;
 
             case 'PUT':
@@ -116,6 +117,37 @@ class restful_api
         } else {
             $this->response(500, "Unknown endpoint");
         }
+    }
+    protected function _submit_create_query($query) {
+        try {
+            $database = new DatabaseConnector();
+            $result = $database->getConnection()->query($query);
+            if ($result) {
+                $this->res["success"] = true;
+                $this->res["message"] = "Create success!";
+            } else {
+                $this->res["message"] = "ERROR: could not to insert , $query";
+            }
+        } catch (Exception $e) {
+            $this->response(500, $this->res);
+        }
+        $this->response(201, $this->res);
+    }
+
+    protected function _submit_search_query($query) {
+        $database = new DatabaseConnector();
+        $this->res["data"] = array();
+        $result = $database->getConnection()->query($query);
+        try {
+            while ($row = $result->fetch_assoc()) {
+                $this->res["data"][] = $row;
+            }
+            $this->res["success"] = true;
+            $this->res["message"] = "Search success!";
+        } catch (Exception $e) {
+            $this->response(500, $this->res);
+        }
+        $this->response(200, $this->res);
     }
 }
 ?>
