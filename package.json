@@ -1,0 +1,8 @@
+{
+  "name": "Shopping-cart-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Phong940253/Shopping-cart-web.git",
+  "author": "ttphuongvi <trthphuongvi2901@gmail.com>",
+  "license": "MIT"
+}
