@@ -4,10 +4,10 @@ class DatabaseConnector
     public $dbConnection = null;
     public function __construct()
     {
-        $hostName = "db4free.net";
-        $userName = "phong940253";
-        $passWord = "01676940253";
-        $databaseName = "phong940253";
+        $hostName = "us-cdbr-east-04.cleardb.com";
+        $userName = "b322709dcd3c03";
+        $passWord = "f2b49543";
+        $databaseName = "heroku_d8ef7bf1662f8ca";
         $port = 3306;
         try {
             $this->dbConnection = new mysqli($hostName, $userName, $passWord, $databaseName, $port);
