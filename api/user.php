@@ -4,9 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/database/DatabaseConnector.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/api/restful.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/php/encryptPassword.php";
-
 use \Firebase\JWT\JWT;
-
 class user extends restful_api
 {
     function __construct()
@@ -178,7 +176,7 @@ class user extends restful_api
     {
         if ($this->method == "POST") {
             $database = new DatabaseConnector();
-            $query = "select firstName, middleName, lastName, mobile, email, passwordHash from user where id = " . $this->params["id"];
+            $query = "select * from user where id = " . $this->params["id"];
             error_log(print_r($query, true));
             $result = $database->getConnection()->query($query);
             $this->res["data"] = array();
@@ -203,14 +201,12 @@ class user extends restful_api
                             "nbf" => $issued_at,
                             "data" => array(
                                 "id" => $this->res["data"]["id"],
-                                "firstName" => $this->res["data"]["firstName"],
-                                "middleName" => $this->res["data"]["middleName"],
-                                "lastName" => $this->res["data"]["id"],
-                                "mobile" => $this->res["data"]["mobile"],
-                                "email" => $this->res["data"]["email"]
+                                "registeredAt" => $this->res["data"]["registeredAt"],
                             )
                         );
                         $jwt = JWT::encode($token, $key);
+                        $queryUpdate = "update user set jwt = '{$jwt}' where id = '{$this->params['id']}'";
+                        $result = $database->getConnection()->query($queryUpdate);
                         $this->res["jwt"] = $jwt;
                     }
                 }
@@ -227,6 +223,39 @@ class user extends restful_api
             $this->response(200, $this->res);
         }
     }
+
+    function checkJwt($jwt) {
+        $database = new DatabaseConnector();
+        $query = "select * from user where jwt = {$jwt}";
+        $result = $database->getConnection()->query($query);
+        $data = array();
+        $num = $result->num_rows;
+        try {
+            if ($num > 0) {
+                $data = $result->fetch_assoc();
+                return array(true, $data);
+            }
+        } catch (Exception $e) {
+            error_log(print_r($e->getMessage(), true));
+            return array(false, $data);
+        }
+        return array(false, $data);
+    }
+
+    function authoWithJwt() {
+        if ($this->method == "POST") {
+            try {
+                $data = $this->checkJwt($this->params["jwt"]);
+                $this->res['data'] = $data[1];
+                $this->res['success'] = $data[0];
+                $this->response(200, $this->res);
+            } catch (Exception $e) {
+                error_log(print_r($e->getMessage(), true));
+                $this->response(500, $this->res);
+            }
+        }
+    }
+
 }
 
 $user = new user();
