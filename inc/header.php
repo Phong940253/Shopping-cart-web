@@ -2,6 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 ?>
 <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+<script src="/js/publicFunction.js"></script>
 <div class="header">
     <div class="container">
         <div class="middle_wrap">
@@ -90,5 +91,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
         </div>
     </div>
 </div>
+<script src="/js/autoLogin.js"></script>
 <script src="/js/Autho.js"></script>
 
