@@ -26,7 +26,19 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
             }
             $(".Khung-ben-phai").empty();
         });
+        $(".Thong-bao-cua-toi").click(function () {
+            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Thongbao.html")
+        })
+        $(".Thong-tin-tai-khoan").click(function () {
+            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html")
+        })
+
     });
+
+
+    // $( ".Thong-bao-cua-toi" ).on( "click", function( event ) {
+    //     $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Thongbao.html");
+    // });
 </script>
 <div class="PhanChung">
     <div class="ThungChua">
@@ -43,7 +55,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
                     <li>
                         <a class="Thong-tin-tai-khoan active">
                             <img src="/img/info.svg" class="icon">
-                            <span>Thông tin sản phẩm</span>
+                            <span>Thông tin tài khoản</span>
                         </a>
                     </li>
                     <li>

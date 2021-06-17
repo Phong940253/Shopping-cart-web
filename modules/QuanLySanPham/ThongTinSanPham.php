@@ -60,8 +60,12 @@
         </div>
         <div class="Khung-form">
             <label class="input-label">&nbsp;</label>
-            <button type="Them" class="margin30 btn-them">Thêm Ảnh</button>
+
+            <div class="frame">
+                <button class="custom-btn btn-7"><span>Read More</span></button>
+            </div>
             <button type="CapNhat" class="margin30 btn-capnhat">
+
                 Cập nhật
             </button>
         </div>

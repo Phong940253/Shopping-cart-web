@@ -154,7 +154,7 @@ class user extends restful_api
     {
         if ($this->method == "POST") {
             $database = new DatabaseConnector();
-            $query = "select id from user where email = '" . $this->params["email"] . "' OR mobile = '" . $this->params["mobile"] . "'";
+            $query = "select id, mobile from user where email = '" . $this->params["email"] . "' OR mobile = '" . $this->params["mobile"] . "'";
             error_log(print_r($query, true));
             $result = $database->getConnection()->query($query);
             $this->res["data"] = array();
