@@ -116,7 +116,7 @@ h3 {
 }
 
 /*Tai-Khoan*/
-.KhungThongTinTaiKhoan {
+.KhungChungBenPhai {
     background-color: rgb(255, 255, 255);
     padding: 20px 20px;
     flex: 1 1 0%;
@@ -124,26 +124,25 @@ h3 {
     flex-direction: column;
     align-items: center;
 }
-.KhungThongTinTaiKhoan .Khung-form{
+.KhungChungBenPhai .Khung-form{
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     min-width: 110px;
-    justify-content: space-evenly;
 }
-.KhungThongTinTaiKhoan .input-label {
+.KhungChungBenPhai .input-label {
     width: 150px;
     min-width: 110px;
     font-size: 16px;
     color: rgb(51, 51, 51);
 }
-.KhungThongTinTaiKhoan .Khung-form > div {
+.KhungChungBenPhai .Khung-form > div {
     display: flex;
     flex: 1 1 0%;
     position: relative;
     z-index: 1;
 }
-.KhungThongTinTaiKhoan .Khung-form input {
+.KhungChungBenPhai .Khung-form input {
     flex: 1 1 0%;
 }
 
@@ -238,6 +237,8 @@ a {
     padding: 6px 12px;
     line-height: 34px;
     outline: none;
+    width: 350px;
+    margin: 15px 0px 15px 0px;
 
 }
 
@@ -626,7 +627,7 @@ button {
     border-radius: 3px;
 }
 
-.content {
+.contentt{
     background: #fff;
     position: relative;
     width: 100%;
@@ -637,7 +638,7 @@ button {
     border-radius: 0 3px 3px 3px;
 }
 
-.content div {
+.contentt div {
     position: absolute;
     top: 0;
     left: 0;
@@ -653,10 +654,10 @@ button {
     transition: all linear 0.1s;
 }
 
-.tabs input.tab-selector-1:checked ~ .content .content-1,
-.tabs input.tab-selector-2:checked ~ .content .content-2,
-.tabs input.tab-selector-3:checked ~ .content .content-3,
-.tabs input.tab-selector-4:checked ~ .content .content-4 {
+.tabs input.tab-selector-1:checked ~ .contentt .content-1,
+.tabs input.tab-selector-2:checked ~ .contentt .content-2,
+.tabs input.tab-selector-3:checked ~ .contentt .content-3,
+.tabs input.tab-selector-4:checked ~ .contentt .content-4 {
     bottom: 0px;
     z-index: 100;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -669,11 +670,11 @@ button {
     transition: all ease-out 0.2s 0.2s;
 }
 
-.content div h2,
-.content div h3{
+.contentt div h2,
+.contentt div h3{
     color: #FDB827;
 }
-.content div p {
+.contentt div p {
     font-size: 14px;
     line-height: 22px;
     font-style: italic;
@@ -683,4 +684,170 @@ button {
     padding-left: 15px;
     font-family: Cambria, Georgia, serif;
     border-left: 8px solid rgba(63,148,148, 0.1);
+}
+/*Diachi*/
+.Khung-dia-chi {
+    background: #fff;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    z-index: 5;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-8 {
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-8 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.btn-8:before{
+    height: 0%;
+    width: 2px;
+}
+.btn-8:after {
+    width: 0%;
+    height: 2px;
+}
+.btn-8:hover{
+    color: rgba(251,75,2,1);
+    background: transparent;
+}
+.btn-8:hover:before {
+    height: 100%;
+}
+.btn-8:hover:after {
+    width: 100%;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.btn-8 span:before {
+    width: 2px;
+    height: 0%;
+}
+.btn-8 span:after {
+    height: 2px;
+    width: 0%;
+}
+.btn-8 span:hover:before {
+    height: 100%;
+}
+.btn-8 span:hover:after {
+    width: 100%;
+}
+
+/*ThemDiaChi*/
+.Khung-dia-chi .Khung-form{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 110px;
+    justify-content: space-evenly;
+}
+.btn-6 {
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-6 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.btn-6:before{
+    height: 0%;
+    width: 2px;
+}
+.btn-6:after {
+    width: 0%;
+    height: 2px;
+}
+.btn-6:hover{
+    color: rgba(251,75,2,1);
+    background: transparent;
+}
+.btn-6:hover:before {
+    height: 100%;
+}
+.btn-6:hover:after {
+    width: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.btn-6 span:before {
+    width: 2px;
+    height: 0%;
+}
+.btn-6 span:after {
+    height: 2px;
+    width: 0%;
+}
+.btn-6 span:hover:before {
+    height: 100%;
+}
+.btn-6 span:hover:after {
+    width: 100%;
 }

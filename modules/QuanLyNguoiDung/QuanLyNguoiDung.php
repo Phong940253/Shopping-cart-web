@@ -14,34 +14,9 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
 ?>
-<script>
-    $(document).ready(function () {
-        $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html");
-        $(".ThongTinTuyChon li a[class!='active']").click((e) => {
-            $(".ThongTinTuyChon li .active").toggleClass("active");
-            if (e.target.nodeName != "A") {
-                $(e.target.parentElement).toggleClass("active");
-            } else {
-                $(e.target).toggleClass("active");
-            }
-            $(".Khung-ben-phai").empty();
-        });
-        $(".Thong-bao-cua-toi").click(function () {
-            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Thongbao.html")
-        })
-        $(".Thong-tin-tai-khoan").click(function () {
-            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html")
-        })
-        $(".Quan-ly-don-hang").click(function () {
-            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/QuanLyDonHang.html")
-        })
-    });
-
-
-    // $( ".Thong-bao-cua-toi" ).on( "click", function( event ) {
-    //     $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Thongbao.html");
-    // });
-</script>
+<script src="/js/QuanLyNguoiDung.js"></script>
+<script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'/>
+<script src="/js/Diachi.js"></script>
 <div class="PhanChung">
     <div class="ThungChua">
         <div class="KhungChung">
@@ -78,12 +53,12 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
                             <span>Địa chỉ</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="Thong-tin-thanh-toan">
-                            <img class="icon" src="/img/Thong-tin-thanh-toan.svg">
-                            <span>Thông tin thanh toán</span>
-                        </a>
-                    </li>
+<!--                    <li>-->
+<!--                        <a class="Thong-tin-thanh-toan">-->
+<!--                            <img class="icon" src="/img/Thong-tin-thanh-toan.svg">-->
+<!--                            <span>Thông tin thanh toán</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li>
                         <a class="Nhan-xet">
                             <img class="icon" src="/img/Nhan-xet.svg">
@@ -129,5 +104,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php';
 ?>
+
 </body>
 </html>
