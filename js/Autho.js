@@ -1,3 +1,21 @@
+closeLogin = () => {
+  $(".overlay").css("visibility", "collapse");
+  $("#login-with-phone").empty();
+  $("#login-with-email").empty();
+  $("#login-with-pass").empty();
+  $("div.loader").empty();
+};
+
+const checkWrongPhone = (value) => {
+  console.log("call wrong");
+  const isWrong = !checkValid(value);
+  if (isWrong) {
+    $(".error-mess").text("Số điện thoại không đúng định dạng.");
+  } else {
+    $(".error-mess").empty();
+  }
+  return isWrong;
+};
 
 $(document).ready(() => {
   $(".header-account-container").click(() => {
@@ -11,11 +29,7 @@ $(document).ready(() => {
   // hien menu dang nhap
 
   $(".btn-close").click(() => {
-    $(".overlay").css("visibility", "collapse");
-    $("#login-with-phone").empty();
-    $("#login-with-email").empty();
-    $("#login-with-pass").empty();
-    $("div.loader").empty();
+    closeLogin();
   });
 
   // dong menu dang nhap
@@ -50,68 +64,82 @@ $(document).ready(() => {
     }
   });
 
+  $("#login-with-phone").on("input", (e) => {
+    const value = $(e.target)[0].value;
+    checkWrongPhone(value);
+  });
+
   // an hien password
 
   $("#login-with-phone").on("submit", "#submitPhoneForm", (e) => {
-    $("div.loader").load("/modules/load/loader.html");
     e.preventDefault(); // avoid to execute the actual submit of the form.
-    const form = $("#submitPhoneForm");
-    const url = form.attr("action");
-    $("#login-with-phone").empty();
-    $.ajax({
-      type: form.attr("method"),
-      url,
-      data: form.serialize(),
-    }).then((data) => {
-      $("#login-with-email").empty();
-      $("#login-with-phone").empty();
-      $("div.loader").empty();
-      console.log(data);
-      const reponse = data;
-      if (reponse.success) {
-        $("#login-with-pass").load("/modules/login/login-with-pass.html", () => {
-          $("div.heading p b").text(reponse.data.mobile);
-          $("#login-with-pass").on("submit", "#submitFormPassword", (e) => {
-            $("div.loader").load("/modules/load/loader.html");
-            e.preventDefault();
-            // create from data
-            const data = new FormData($("#submitFormPassword")[0]);
-            $("#login-with-pass").empty();
-            data.append("id", reponse.data.id);
-            console.log(data);
-            $.ajax({
-              type: "POST",
-              url: "/api/user.php/autho",
-              processData: false,
-              contentType: false,
-              data: data,
-            }).then((reponse) => {
-              $("div.loader").empty();
-              if (reponse.success) {
-                loadDataForHeader(reponse);
-                setCookie("jwt", reponse.jwt, 30);
-                $(".overlay").css("visibility", "collapse");
-              } else {
-                $("#login-with-pass").load("/modules/login/login-with-pass.html");
-                alert("sai tài khoản hoặc mặt khẩu!");
-              }
-            }).catch((e) => {
-              alert("Có lỗi với hệ thống");
-              $("div.loader").empty();
-              $("#login-with-pass").load("/modules/login/login-with-pass.html");
-              console.log(e);
+    if (!checkWrongPhone($(".input-fill input")[0].value)) {
+      $("div.loader").load("/modules/load/loader.html", () => {
+        const form = $("#submitPhoneForm");
+        const url = form.attr("action");
+        $("#login-with-phone").empty();
+        $("#login-with-email").empty();
+        $.ajax({
+          type: form.attr("method"),
+          url,
+          data: form.serialize(),
+        }).then((data) => {
+          $("#login-with-phone").empty();
+          $("div.loader").empty();
+          const reponse = data;
+          let method;
+          if (reponse.success) {
+            method = "login";
+          } else {
+            method = "create";
+          }
+          $("#login-with-pass").load("/modules/login/login-with-pass.html", () => {
+            $("div.heading p b").text(reponse.data.mobile);
+            if (method == "create") {
+              $("div.heading p").text("Số điện thoại của bạn chưa đăng kí, vui lòng nhập mật khẩu để đăng kí tài khoản!");
+              $("#submitFormPassword Button").html("Đăng Ký");
+            }
+            $("#login-with-pass").on("submit", "#submitFormPassword", (e) => {
+              e.preventDefault();
+              $("div.loader").load("/modules/load/loader.html", () => {
+              // create from data
+                const data = new FormData($("#submitFormPassword")[0]);
+                $("#login-with-pass").empty();
+                data.append("id", reponse.data.id);
+                console.log(data);
+                $.ajax({
+                  type: "POST",
+                  url: "/api/user.php/autho",
+                  processData: false,
+                  contentType: false,
+                  data: data,
+                }).then((reponse) => {
+                  $("div.loader").empty();
+                  if (reponse.success) {
+                    loadDataForHeader(reponse);
+                    setCookie("jwt", reponse.jwt, 30);
+                    $(".overlay").css("visibility", "collapse");
+                  } else {
+                    $("#login-with-pass").load("/modules/login/login-with-pass.html");
+                    alert("sai tài khoản hoặc mặt khẩu!");
+                  }
+                }).catch((e) => {
+                  alert("Có lỗi với hệ thống");
+                  $("div.loader").empty();
+                  $("#login-with-pass").load("/modules/login/login-with-pass.html");
+                  console.log(e);
+                });
+              });
             });
           });
+        }).catch((e) => {
+          $("#login-with-phone").load("/modules/login/login-with-phone.html").then(() => {
+            $("div.loader").empty();
+          });
+          console.log(e);
         });
-      } else {
-        $("#login-with-phone").load("/modules/login/login-with-phone.html");
-        alert("Không tồn tại tài khoản!");
-      }
-    }).catch((e) => {
-      $("div.loader").empty();
-      $("#login-with-phone").load("/modules/login/login-with-phone.html");
-      console.log(e);
-    });
+      });
+    }
   });
 });
 
