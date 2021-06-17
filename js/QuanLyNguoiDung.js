@@ -24,7 +24,12 @@ $(document).ready(function () {
     $(".Khung-ben-phai").on("click", ".btn-8", () => {
         $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/ThemDiachi.html")
     })
-
+    $(".Nhan-xet").click(function () {
+        $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/Nhanxet.html")
+    })
+    $(".PhanChung").on("click", ".btn-5", () => {
+        $(".PhanChung").load("/")
+    })
 });
 
 
