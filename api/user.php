@@ -111,10 +111,10 @@ class user extends restful_api
                 if (!is_null($value)) {
                     if ($key != "id") {
                         if ($key == "admin" || $key == "vendor") {
-                            $query .= " {$key}={$key},";
+                            $query .= " {$key}={$value},";
                             $dem++;
                         } else {
-                            $query .= " {$key}='{$key}',";
+                            $query .= " {$key}='{$value}',";
                             $dem++;
                         }
                     }
