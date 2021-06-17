@@ -382,6 +382,12 @@ textarea {
 .style-login .input-fill::before {
     border-color: rgb(13, 92, 182);
 }
+.error-mess {
+    color: rgb(255, 66, 78);
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+}
 .style-login .input .show-password {
     position: absolute;
     right: 0px;
