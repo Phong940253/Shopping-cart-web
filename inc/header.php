@@ -1,6 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
-echo '
+?>
+<!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
 <div class="header">
     <div class="container">
         <div class="middle_wrap">
@@ -89,5 +90,5 @@ echo '
         </div>
     </div>
 </div>
-<script src="/js/Login.js"></script>
-';
+<script src="/js/Autho.js"></script>
+

@@ -77,8 +77,8 @@ echo '
                 </p>
                 <h4 class="store-title">TẢI ỨNG DỤNG TRÊN ĐIỆN THOẠI</h4>
                 <p>
-                    <a rel="noreferrer" href="https://itunes.apple.com/vn/app/id958100553" class="icon" target="_blank" aria-label=""><img src="https://frontend.Team-ITcdn.com/_desktop-next/static/img/icons/appstore.png" width="134" alt=""></a>
-                    <a rel="noreferrer" href="https://play.google.com/store/apps/details?id=vn.Team-IT.app.Team-ITandroid" class="icon" target="_blank" aria-label=""><img src="https://frontend.Team-ITcdn.com/_desktop-next/static/img/icons/playstore.png" width="134" alt=""></a>
+                    <a rel="noreferrer" href="https://itunes.apple.com/vn/app/id958100553" class="icon" target="_blank" aria-label=""><img src="/img/app-store.svg" width="134" alt=""></a>
+                    <a rel="noreferrer" href="https://play.google.com/store/apps/details?id=vn.Team-IT.app.Team-ITandroid" class="icon" target="_blank" aria-label=""><img src="/img/google-play-badge.png" width="134" alt=""></a>
                 </p>
             </div>
         </div>
@@ -100,8 +100,8 @@ echo '
                 <h5>© 2021 - Bản quyền của Công Ty Cổ Phần Team-IT.vn</h5>
             </div>
             <div class="block">
-                <a href="https://hotro.Team-IT.vn/hc/vi/articles/115005575826" rel="noreferrer" aria-label=""><img src="https://frontend.Team-ITcdn.com/_desktop-next/static/img/footer/bo-cong-thuong-2.png" width="36" alt=""></a>
-                <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=21201" rel="noreferrer" aria-label=""><img src="https://frontend.Team-ITcdn.com/_desktop-next/static/img/footer/bo-cong-thuong.svg" width="120" alt=""></a>
+                <!--<a href="https://hotro.Team-IT.vn/hc/vi/articles/115005575826" rel="noreferrer" aria-label=""><img src="https://frontend.Team-ITcdn.com/_desktop-next/static/img/footer/bo-cong-thuong-2.png" width="36" alt=""></a>
+                <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=21201" rel="noreferrer" aria-label=""><img src="https://frontend.Team-ITcdn.com/_desktop-next/static/img/footer/bo-cong-thuong.svg" width="120" alt=""></a>-->
             </div>
         </div>
     </div>
