@@ -35,6 +35,7 @@ function showHomePage() {
   // show login page on error will be here
 }
 
+
 $(document).ready(() => {
   $(".header-account-container").click(() => {
     $("#login-with-phone").load("modules/login/login-with-phone.html");
@@ -124,6 +125,7 @@ $(document).ready(() => {
             }).then((reponse) => {
               $("div.loader").empty();
               if (reponse.success) {
+                setCookie("jwt", reponse.jwt, 30);
                 alert("Đăng nhập thành công!");
               } else {
                 alert("sai tài khoản hoặc mặt khẩu!");
@@ -147,3 +149,37 @@ $(document).ready(() => {
     });
   });
 });
+
+function onSignIn(googleUser) {
+  const profile = googleUser.getBasicProfile();
+  console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log("Name: " + profile.getName());
+  console.log("Image URL: " + profile.getImageUrl());
+  console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+function signOut() {
+  const auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function() {
+    console.log("User signed out.");
+  });
+}
+
+// window.onLoadCallback = function() {
+//   gapi.auth2.init({
+//     client_id: "684006131040-71e176oqhcvps4omhe3c6sc02qppnaal.apps.googleusercontent.com",
+//   });
+//   gapi.signin2.render("g-signin2", {
+//     "scope": "profile email openid",
+//     "width": 200,
+//     "height": 40,
+//     "longtitle": true,
+//     "theme": "dark",
+//     "onsuccess": function(googleUser) {
+//       console.log("Logged in as: " + googleUser.getBasicProfile().getName());
+//     },
+//     "onfailure": function(e) {
+//       console.warn("Google Sign-In failure: " + e.error);
+//     },
+//   });
+// };
