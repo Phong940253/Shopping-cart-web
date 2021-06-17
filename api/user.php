@@ -4,7 +4,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/database/DatabaseConnector.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/api/restful.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/php/encryptPassword.php";
+
 use \Firebase\JWT\JWT;
+
 class user extends restful_api
 {
     function __construct()
@@ -26,6 +28,7 @@ class user extends restful_api
         "profile" => "",
         "gender" => ""
     ];
+
     function create()
     {
         if ($this->method == "POST") {
@@ -45,11 +48,11 @@ class user extends restful_api
                     $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "'{$this->params[$key]}'";
                 }
             }
-            $query = substr($query, 0,-2) . ") VALUE (";
+            $query = substr($query, 0, -2) . ") VALUE (";
             foreach ($this->thamso as $value) {
                 $query .= "{$value}, ";
             }
-            $query = substr($query, 0,-2) . ")";
+            $query = substr($query, 0, -2) . ")";
             $this->_submit_create_query($query);
         }
     }
@@ -207,6 +210,7 @@ class user extends restful_api
                         $jwt = JWT::encode($token, $key);
                         $queryUpdate = "update user set jwt = '{$jwt}' where id = '{$this->params['id']}'";
                         $result = $database->getConnection()->query($queryUpdate);
+
                         $this->res["jwt"] = $jwt;
                     }
                 }
@@ -214,7 +218,12 @@ class user extends restful_api
                 error_log(print_r($e->getMessage(), true));
                 $this->response(500, $this->res);
             }
-            $this->res["data"] = [];
+            $this->res["data"] = [
+                "id" => $this->res['data']['id'],
+                "firstName" => $this->res['data']['firstName'],
+                "middleName" => $this->res['data']['middleName'],
+                "lastName" => $this->res['data']['lastName']
+            ];
             if ($this->res["success"]) {
                 $this->res["message"] = "Login success!";
                 $this->response(200, $this->res);
@@ -224,10 +233,12 @@ class user extends restful_api
         }
     }
 
-    function checkJwt($jwt) {
+    function checkJwt($jwt)
+    {
         $database = new DatabaseConnector();
-        $query = "select * from user where jwt = {$jwt}";
+        $query = "select * from user where jwt = '{$jwt}'";
         $result = $database->getConnection()->query($query);
+//        error_log(print_r($query, true));
         $data = array();
         $num = $result->num_rows;
         try {
@@ -242,9 +253,11 @@ class user extends restful_api
         return array(false, $data);
     }
 
-    function authoWithJwt() {
+    function authoWithJwt()
+    {
         if ($this->method == "POST") {
             try {
+
                 $data = $this->checkJwt($this->params["jwt"]);
                 $this->res['data'] = $data[1];
                 $this->res['success'] = $data[0];
