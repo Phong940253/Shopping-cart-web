@@ -18,4 +18,7 @@ $(document).ready(function () {
     $(".Quan-ly-san-pham").click(function () {
         $(".Khung-ben-phai").load("/modules/QuanLyNguoiBan/QuanLySanPhamShop.html")
     })
+    $(".Them-san-pham").click(function () {
+        $(".Khung-ben-phai").load("/modules/QuanLyNguoiBan/ThemSanPham.html")
+    })
 });
