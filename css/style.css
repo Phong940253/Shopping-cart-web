@@ -291,6 +291,36 @@ textarea {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.user-menu{
+    display: none;
+    border: 1px solid rgb(239, 239, 239);
+    background: rgb(255, 255, 255);
+    width: auto;
+    min-width: 196px;
+    z-index: 15;
+    list-style: none;
+    margin: 0px;
+    padding: 10px 0px;
+    border-radius: 0px 0px 3px 3px;
+    box-shadow: rgb(0, 0, 0, 0.18) 0px 6px 12px 0px;
+    position: absolute;
+    top: 45px;
+    left: calc(50% + 10px);
+    transform: translateX(-50%);
+}
+.user-drop-item {
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 265px;
+    margin: 0px;
+    padding: 8px 20px;
+    color: rgb(51, 51, 51);
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+}
 .arrow-icon {
     width: 16px;
     height: 16px;
