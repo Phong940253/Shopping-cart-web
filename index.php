@@ -8,10 +8,10 @@
 
     <title>Trang chủ</title>
 <!--    <meta name="google-signin-client_id" content="684006131040-71e176oqhcvps4omhe3c6sc02qppnaal.apps.googleusercontent.com">-->
-    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="./css/style.css">
     <script src="lib/jquery.min.js"></script>
     <script src="lib/slick/slick.js"></script>
+    <script src="js/serviceworker.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
 </head>
