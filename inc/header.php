@@ -40,7 +40,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
             </div>
             <div class="header-user">
                 <div class="header-account-container">
-                    <img class="profile-icon" src="/img/profile.png" />
+                    <img class="profile-icon" src="/img/profile.png"/>
                     <span class="user-style-item-text">
                         <span class="user-style-no-wrap">
                             Đăng Nhập / Đăng Ký
@@ -49,7 +49,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
                             <span>
                                 Tài Khoản
                             </span>
-                            <img class="arrow-icon" src="/img/arow.png" />
+                            <img class="arrow-icon" src="/img/arow.png"/>
                         </span>
                     </span>
                 </div>
