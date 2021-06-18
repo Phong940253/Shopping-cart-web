@@ -32,10 +32,16 @@ const howHomePage = ()=> {
 
 const loadDataForHeader = (reponse) => {
   const data = reponse.data;
-  if (typeof data.firstName == "undefined" && typeof data.middleName == "undefined" && typeof data.lastName == "undefined") {
-    $(".account-label span").text("Chưa có tên");
-  } else $(".account-label span").text(data.firstName + " " + data.middleName + " " + data.lastName);
-  $(".user-style-no-wrap").text("Tài khoản");
+  const checkEmpty = (t) => {
+    return (typeof t == "undefined" || t == null);
+  };
+  $(".header-account-container").load("/modules/User/header-after-login.html", () => {
+    if (checkEmpty(data.firstName) && checkEmpty(data.middleName) && checkEmpty(data.lastName)) {
+      $(".account-label span").text("Chưa có tên");
+    } else $(".account-label span").text(data.firstName + " " + data.middleName + " " + data.lastName);
+    $(".user-style-no-wrap").text("Tài khoản");
+  });
+  $(".header-account-container").off("click");
 };
 
 const checkValid = (phone) => {

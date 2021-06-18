@@ -18,6 +18,12 @@ const checkWrongPhone = (value) => {
 };
 
 $(document).ready(() => {
+  $(".header-account-container").hover(()=>{
+    $(".user-dropdown").show();
+  }, ()=>{
+    $(".user-dropdown").hide();
+  });
+
   $(".header-account-container").click(() => {
     $("#login-with-phone").load("modules/login/login-with-phone.html");
     $("#login-with-email").empty();
@@ -172,6 +178,7 @@ function signOut() {
     console.log("User signed out.");
   });
 }
+
 
 // window.onLoadCallback = function() {
 //   gapi.auth2.init({
