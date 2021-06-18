@@ -75,17 +75,29 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
                         </a>
                     </li>
                     <li>
-                        <a class="Quan-ly-don-hang">
+                        <a class="Quan-ly-san-pham">
                             <img class="icon" src="/img/Quan-li-don-hang.svg">
                             <span>Quản lý sản phẩm</span>
                         </a>
                     </li>
                     <li>
-                        <a class="Dia-chi">
-                            <img class="icon" src="/img/Dia-chi.svg">
-                            <span>Địa chỉ</span>
+                        <a class="Them-san-pham">
+                            <img class="icon" src="/img/new-product.svg">
+                            <span>Thêm sản phẩm</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="Danh-muc-san-pham">
+                            <img class="icon" src="/img/list.svg">
+                            <span>Danh mục sản phẩm</span>
+                        </a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a class="Dia-chi">-->
+<!--                            <img class="icon" src="/img/Dia-chi.svg">-->
+<!--                            <span>Địa chỉ</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <!--                    <li>-->
                     <!--                        <a class="Thong-tin-thanh-toan">-->
                     <!--                            <img class="icon" src="/img/Thong-tin-thanh-toan.svg">-->

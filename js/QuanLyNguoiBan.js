@@ -15,5 +15,10 @@ $(document).ready(function () {
     $(".Thong-bao-cua-toi").click(function () {
         $(".Khung-ben-phai").load("/modules/QuanLyNguoiBan/ThongBaoShop.html")
     })
-
+    $(".Quan-ly-san-pham").click(function () {
+        $(".Khung-ben-phai").load("/modules/QuanLyNguoiBan/QuanLySanPhamShop.html")
+    })
+    $(".Them-san-pham").click(function () {
+        $(".Khung-ben-phai").load("/modules/QuanLyNguoiBan/ThemSanPham.html")
+    })
 });
