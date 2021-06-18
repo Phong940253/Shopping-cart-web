@@ -33,6 +33,7 @@ class user extends restful_api
     {
         if ($this->method == "POST") {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $jwt = $this->createJwt($this->params['phone'], date("Y-m-d H:i:s"));
             $query = "INSERT INTO user (";
             foreach ($this->thamso as $key => $value) {
                 $query .= $key . ", ";
@@ -48,11 +49,14 @@ class user extends restful_api
                     $this->thamso[$key] = (is_null($this->params[$key])) ? "NULL" : "'{$this->params[$key]}'";
                 }
             }
+            $query .= "jwt" . ", ";
+            $this->thamso['jwt'] = "'{$jwt}'";
             $query = substr($query, 0, -2) . ") VALUE (";
             foreach ($this->thamso as $value) {
                 $query .= "{$value}, ";
             }
             $query = substr($query, 0, -2) . ")";
+            $this->res["jwt"] = $jwt;
             $this->_submit_create_query($query);
         }
     }
@@ -192,22 +196,7 @@ class user extends restful_api
                         $this->res["success"] = true;
 
                         //setup token
-                        $key = "Phong";
-                        date_default_timezone_set('Asia/Ho_Chi_Minh');
-                        $issued_at = time();
-                        $expiration_time = $issued_at + (60 * 60 * 24 * 30); // valid for 1 hour
-                        $issuer = "team-it";
-                        $token = array(
-                            "iat" => $issued_at,
-                            "exp" => $expiration_time,
-                            "iss" => $issuer,
-                            "nbf" => $issued_at,
-                            "data" => array(
-                                "id" => $this->res["data"]["id"],
-                                "registeredAt" => $this->res["data"]["registeredAt"],
-                            )
-                        );
-                        $jwt = JWT::encode($token, $key);
+                        $jwt = $this->createJwt($this->res['data']["id"], $this->res["data"]["registeredAt"]);
                         $queryUpdate = "update user set jwt = '{$jwt}' where id = '{$this->params['id']}'";
                         $result = $database->getConnection()->query($queryUpdate);
 
@@ -267,6 +256,26 @@ class user extends restful_api
                 $this->response(500, $this->res);
             }
         }
+    }
+
+    function createJwt($id, $registeredAt) {
+        $key = "Phong";
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $issued_at = time();
+        $expiration_time = $issued_at + (60 * 60 * 24 * 30); // valid for 1 hour
+        $issuer = "team-it";
+        $token = array(
+            "iat" => $issued_at,
+            "exp" => $expiration_time,
+            "iss" => $issuer,
+            "nbf" => $issued_at,
+            "data" => array(
+                "id" => $this->res["data"]["id"],
+                "registeredAt" => $this->res["data"]["registeredAt"],
+            )
+        );
+        $jwt = JWT::encode($token, $key);
+        return $jwt;
     }
 
 }

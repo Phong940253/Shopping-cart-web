@@ -76,6 +76,8 @@ $(document).ready(() => {
     if (!checkWrongPhone($(".input-fill input")[0].value)) {
       $("div.loader").load("/modules/load/loader.html", () => {
         const form = $("#submitPhoneForm");
+        const phone = $(".input-fill input")[0].value;
+        console.log(phone);
         const url = form.attr("action");
         $("#login-with-phone").empty();
         $("#login-with-email").empty();
@@ -102,14 +104,22 @@ $(document).ready(() => {
             $("#login-with-pass").on("submit", "#submitFormPassword", (e) => {
               e.preventDefault();
               $("div.loader").load("/modules/load/loader.html", () => {
-              // create from data
+                // create from data
                 const data = new FormData($("#submitFormPassword")[0]);
+                let url;
+                if (method == "create") {
+                  url = "/api/user.php/create";
+                  data.append("mobile", phone);
+                  data.append("vendor", "0");
+                  data.append("admin", "0");
+                } else {
+                  url = "/api/user.php/autho";
+                  data.append("id", reponse.data.id);
+                }
                 $("#login-with-pass").empty();
-                data.append("id", reponse.data.id);
-                console.log(data);
                 $.ajax({
                   type: "POST",
-                  url: "/api/user.php/autho",
+                  url: url,
                   processData: false,
                   contentType: false,
                   data: data,
@@ -121,13 +131,18 @@ $(document).ready(() => {
                     $(".overlay").css("visibility", "collapse");
                   } else {
                     $("#login-with-pass").load("/modules/login/login-with-pass.html");
-                    alert("sai tài khoản hoặc mặt khẩu!");
+                    alert(method == "create" ? "thông tin nhập vào không hợp lệ!": "sai tài khoản hoặc mặt khẩu!");
                   }
+                  $("#login-with-pass").off("submit", "#submitFormPassword" );
                 }).catch((e) => {
                   alert("Có lỗi với hệ thống");
                   $("div.loader").empty();
-                  $("#login-with-pass").load("/modules/login/login-with-pass.html");
+                  $("#login-with-pass").load("/modules/login/login-with-pass.html", ()=>{
+                    $("div.heading p").text("Số điện thoại của bạn chưa đăng kí, vui lòng nhập mật khẩu để đăng kí tài khoản!");
+                    $("#submitFormPassword Button").html("Đăng Ký");
+                  });
                   console.log(e);
+                  $("#login-with-pass").off("submit", "#submitFormPassword" );
                 });
               });
             });
