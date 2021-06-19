@@ -25,7 +25,7 @@ $(document).ready(() => {
   });
 
   $(".header-account-container").click(() => {
-    $("#login-with-phone").load("modules/login/login-with-phone.html");
+    $("#login-with-phone").load("/modules/login/login-with-phone.html");
     $("#login-with-email").empty();
     $("#login-with-pass").empty();
     $("div.loader").empty();
