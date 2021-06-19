@@ -84,7 +84,17 @@ class user extends restful_api
     {
         if ($this->method == "POST") {
             $database = new DatabaseConnector();
-            $query = "select * from user where id = " . $this->params["id"];
+            $check = $this->checkJwt($this->params["jwt"]);
+            if (!empty($check[0])) {
+            } else {
+                $this->res["success"] = false;
+                $this->response(200, $this->res);
+            }
+            if (is_null($this->params["id"])) {
+                $this->res['data'] = $check[1];
+                $this->response(200, $this->res);
+            } else
+                $query = "select * from user where id = '{$this->params['id']}'";
             $result = $database->getConnection()->query($query);
             $this->res["data"] = array();
             $num = $result->num_rows;
@@ -116,10 +126,13 @@ class user extends restful_api
                 if (!is_null($value)) {
                     if ($key != "id") {
                         if ($key == "admin" || $key == "vendor") {
-                            $query .= " {$key}={$value},";
+                            $query .= " {
+                    $key}={
+                    $value},";
                             $dem++;
                         } else {
-                            $query .= " {$key}='{$value}',";
+                            $query .= " {
+                    $key}='{$value}',";
                             $dem++;
                         }
                     }
@@ -130,7 +143,7 @@ class user extends restful_api
                     if (substr($query, -1) == ",") {
                         $query = substr($query, 0, -1);
                     }
-                    $query .= " WHERE id={$this->params["id"]}";
+                    $query .= " WHERE id ={$this->params["id"]}";
                     $database = new DatabaseConnector();
                     $this->res["success"] = $database->getConnection()->query($query);
                     if ($this->res["success"] === TRUE) {
@@ -159,7 +172,7 @@ class user extends restful_api
     {
         if ($this->method == "POST") {
             $database = new DatabaseConnector();
-            $query = "select id, mobile from user where email = '" . $this->params["email"] . "' OR mobile = '" . $this->params["mobile"] . "'";
+            $query = "select id, mobile from user where email = '" . $this->params["email"] . "' or mobile = '" . $this->params["mobile"] . "'";
             error_log(print_r($query, true));
             $result = $database->getConnection()->query($query);
             $this->res["data"] = array();
@@ -258,12 +271,13 @@ class user extends restful_api
         }
     }
 
-    function createJwt($id, $registeredAt) {
+    function createJwt($id, $registeredAt)
+    {
         $key = "Phong";
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $issued_at = time();
         $expiration_time = $issued_at + (60 * 60 * 24 * 30); // valid for 1 hour
-        $issuer = "team-it";
+        $issuer = "team - it";
         $token = array(
             "iat" => $issued_at,
             "exp" => $expiration_time,
