@@ -1,5 +1,24 @@
+const loadData = () => {
+  // $("#firstName")[0].text(user.firstName);
+};
+
 $(document).ready(function() {
-  $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html");
+  $(".Khung-ben-phai").on("input", (e) => {
+    const input = $(e.target);
+    const span = $(e.target).next().children();
+    if (input.val() != "") {
+      if (typeof (span.attr("value")) == "undefined") {
+        span.attr("value", span.html());
+      }
+      span.html("");
+    } else {
+      span.html(span.attr("value"));
+    }
+  });
+
+  $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html", () => {
+    loadData();
+  });
   $(".ThongTinTuyChon li a[class!='active']").click((e) => {
     $(".ThongTinTuyChon li .active").toggleClass("active");
     if (e.target.nodeName != "A") {
