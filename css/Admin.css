@@ -65,6 +65,7 @@ body {
     transition-delay: 0s;
     opacity: 0;
     pointer-events: none;
+    display: none;
 }
 
 .sidebar-divider0 {
@@ -102,6 +103,7 @@ body {
 
 .sidebar.close .nav-links {
     overflow: visible;
+
 }
 
 .sidebar .nav-links::-webkit-scrollbar {
@@ -169,24 +171,28 @@ body {
 .sidebar.close .nav-links li a .link_name {
     opacity: 0;
     pointer-events: none;
+    display: none;
 }
 
 .sidebar .nav-links li .sub-menu {
-    padding: 6px 6px 14px 80px;
-    margin-top: -10px;
-    background: rgb(0, 127, 240);
+    background: #4e73df;
     display: none;
 }
 
 .sidebar .nav-links li.showMenu .sub-menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    left: 0;
+    z-index: 1;
+    top: 0;
+    transition: height 0.4s;
 }
 
 .sidebar .nav-links li .sub-menu a {
-    color: #fff;
-    font-size: 15px;
-    padding: 5px 0;
-    white-space: nowrap;
     opacity: 0.6;
     transition: all 0.3s ease;
 }
@@ -298,15 +304,13 @@ body {
 .home-section {
     display: flex;
     background: #E4E9F7;
-    height: 100vh;
     flex: 9;
     transition: all 0.5s ease;
     justify-content: center;
 }
 
 .sidebar.close ~ .home-section {
-    left: 78px;
-    width: calc(100% - 78px);
+
 }
 
 .home-section .home-content {
@@ -349,4 +353,42 @@ body {
 }
 
 .image-button {
+}
+.collapse-inner {
+    transition: height 2s;
+    padding: .5rem 0;
+    min-width: 10rem;
+    font-size: .85rem;
+    margin: 0 0 1rem 0;
+}
+.py-2 {
+    padding-bottom: .5rem!important;
+}
+.rounded {
+    border-radius: .35rem!important;
+}
+.bg-white {
+    background-color: #fff!important;
+}
+.collapse-header {
+    margin: 0;
+    white-space: nowrap;
+    padding: .5rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: .65rem;
+    color: #b7b9cc;
+}
+.collapse-item {
+    padding: .5rem 1rem;
+    margin: 0 .5rem;
+    display: block;
+    color: #3a3b45;
+    text-decoration: none;
+    border-radius: .35rem;
+    white-space: nowrap;
+}
+
+.collapse-item:hover {
+    background-color: #eaecf4;
 }
