@@ -55,6 +55,13 @@
         </span>
         </div>
         <div class="Khung-form">
+            <label class="input-label">Giới tính: </label>
+            <select class="Khung-dien" name="calc_shipping_provinces" required="">
+                <option value="">Nam</option>
+                <option value="">Nữ</option>
+            </select>
+        </div>
+        <div class="Khung-form">
             <label class="input-label">Số điện thoại: </label>
 
                <span class="input input--shoko">
@@ -89,6 +96,19 @@
         <div style="margin-bottom: 15px"  class="Khung-form">
             <label class="input-label" for="birthdaytime">Ngày sinh: </label>
             <input class="Khung-dien" type="datetime-local" id="birthdaytime" name="birthdaytime" width=50px>
+        </div>
+        <div class="Khung-form">
+            <label class="input-label">Mô tả: </label>
+            <div>
+                <input
+                        placeholder="Mô tả sơ lược về bạn như tính cách, sở thích, v.v..."
+                        type="text"
+                        name="TenTK"
+                        class="Khung-dien"
+                        value=""
+                />
+            </div>
+
         </div>
         <div style="justify-content: space-evenly" class="Khung-form">
             <button  class="custom-btn btn-7"><span>Thêm ảnh</span></button>
