@@ -111,15 +111,17 @@ $(document).ready(() => {
               e.preventDefault();
               $("div.loader").load("/modules/load/loader.html", () => {
                 // create from data
-                const data = new FormData($("#submitFormPassword")[0]);
+                const data = new FormData();
                 let url;
                 if (method == "create") {
                   url = "/api/user.php/create";
+                  data.append("passwordHash", $("#submitFormPassword input")[0].value);
                   data.append("mobile", phone);
                   data.append("vendor", "0");
                   data.append("admin", "0");
                 } else {
                   url = "/api/user.php/autho";
+                  data.append("password", $("#submitFormPassword input")[0].value);
                   data.append("id", reponse.data.id);
                 }
                 $("#login-with-pass").empty();

@@ -1,4 +1,5 @@
 const data = getCookie("jwt");
+let user;
 const formData = new FormData();
 formData.append("jwt", data);
 $.ajax({
@@ -9,6 +10,7 @@ $.ajax({
   data: formData,
 }).then((response)=>{
   if (response.success) {
+    user = response.data;
     console.log("login success");
     loadDataForHeader(response);
   } else {
