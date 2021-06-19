@@ -35,6 +35,7 @@ body {
 
 .sidebar.close {
     flex: 0.4;
+    transition: all 0.5s ease;
 }
 
 .sidebar .logo-details {
@@ -245,9 +246,8 @@ body {
 }
 
 .sidebar .profile-details {
-    position: fixed;
     bottom: 0;
-    width: 260px;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -313,24 +313,24 @@ body {
 
 }
 
-.home-section .home-content {
+ .home-content {
     height: 60px;
     display: flex;
     align-items: center;
 }
 
-.home-section .home-content .bx-menu,
-.home-section .home-content .text {
+ .home-content .bx-menu,
+ .home-content .text {
     color: #11101d;
     font-size: 35px;
 }
 
-.home-section .home-content .bx-menu {
+ .home-content .bx-menu {
     margin: 0 15px;
     cursor: pointer;
 }
 
-.home-section .home-content .text {
+ .home-content .text {
     font-size: 26px;
     font-weight: 600;
 }
@@ -391,4 +391,9 @@ body {
 
 .collapse-item:hover {
     background-color: #eaecf4;
+}
+.container-home {
+    flex: 9;
+    display: flex;
+    flex-direction: column;
 }
