@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Trang chủ</title>
-<!--    <meta name="google-signin-client_id" content="684006131040-71e176oqhcvps4omhe3c6sc02qppnaal.apps.googleusercontent.com">-->
+    <!--    <meta name="google-signin-client_id" content="684006131040-71e176oqhcvps4omhe3c6sc02qppnaal.apps.googleusercontent.com">-->
     <link rel="stylesheet" href="/css/style.css">
     <script src="/lib/jquery.min.js"></script>
     <script src="/lib/slick/slick.js"></script>
     <script src="/js/serviceworker.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="/lib/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/lib/slick/slick-theme.css"/>
     <link href="/vendor/components/font-awesome/css/all.css" rel="stylesheet" type="text/css">
@@ -37,13 +38,19 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
     });
 </script>
 
+<div>
+    <div class="slick-slider bg-dark w-75 mx-5" style="height: 125px;">
+        <div><h4 class="p-0"><img src="/img/poster0.png"></h4></div>
+        <div><h4 class="p-0"><img src="/img/poster1.png"></h4></div>
+        <div><h4 class="p-0"><img src="/img/poster2.png"></h4></div>
+        <div><h4 class="p-0"><img src="/img/poster3.png"></h4></div>
+        <div><h4 class="p-0"><img src="/img/poster4.png"></h4></div>
+    </div>
+    <div class="list-product m-3 d-flex flex-row flex-wrap justify-content-center">
 
-<div class="slick-slider bg-dark w-75" style="height: 125px;">
-    <div><h4 class="p-0"><img src="/img/poster0.png"></h4></div>
-    <div><h4 class="p-0"><img src="/img/poster1.png"></h4></div>
-    <div><h4 class="p-0"><img src="/img/poster2.png"></h4></div>
-    <div><h4 class="p-0"><img src="/img/poster3.png"></h4></div>
-    <div><h4 class="p-0"><img src="/img/poster4.png"></h4></div>
+    </div>
+    <script src="/js/home.js">
+    </script>
 </div>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php';
