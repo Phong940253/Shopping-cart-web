@@ -26,7 +26,8 @@ class product extends restful_api
         "publishedAt" => "",
         "startsAt" => "",
         "endsAt" => "",
-        "content" => ""
+        "content" => "",
+        "image" => ""
     ];
 
     function create()
@@ -58,21 +59,9 @@ class product extends restful_api
 
     function getall()
     {
-        if ($this->method == "GET") {
-            $database = new DatabaseConnector();
-            $query = "select * from product";
-            $result = $database->getConnection()->query($query);
-            $this->res["data"] = array();
-            try {
-                while ($row = $result->fetch_assoc()) {
-                    $this->res["data"][] = $row;
-                }
-                $this->res["success"] = true;
-            } catch (Exception $e) {
-                error_log(print_r($e->getMessage(), true));
-                $this->response(500, $this->res);
-            }
-            $this->response(200, $this->res);
+        if ($this->method == "POST") {
+            $query = "select * from product limit {$this->params["start"]}, {$this->params["end"]}";
+            $this->_submit_search_query($query);
         }
     }
 

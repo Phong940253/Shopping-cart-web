@@ -147,6 +147,7 @@ class restful_api
         } catch (Exception $e) {
             $this->response(500, $this->res);
         }
+        error_log(print_r($this->res, true));
         $this->response(200, $this->res);
     }
 }

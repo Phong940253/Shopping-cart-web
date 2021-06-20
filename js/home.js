@@ -2,6 +2,8 @@ const item = {
   "itemName": "Giày",
   "itemSummary": "Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum, ea, ducimus!",
 };
+
+
 $(document).ready(() => {
   for (i = 0; i <= 5; i += 1) {
     $.post("/modules/component/item.php", item, (reponse) =>{

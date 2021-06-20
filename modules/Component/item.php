@@ -11,12 +11,12 @@
     <div class="shoe-details">
         <span class="shoe_name">
             <?php
-            echo $_POST['itemName'];
+            echo $_POST['title'];
             ?>
         </span>
         <p>
             <?php
-            echo $_POST['title'];
+            echo $_POST['summary'];
             ?>
         </p>
         <div class="stars">
@@ -37,12 +37,16 @@
             </div>
         </div>
         <div class="price">
-            <span class="price_num">$09.00</span>
+            <span class="price_num">
+                <?php
+                $_POST['price'];
+                ?>
+            </span>
             <span class="price_letter">Nine dollar only</span>
         </div>
     </div>
     <div class="button">
         <div class="button-layer"></div>
-        <button>Add To Cart</button>
+        <button>Thêm giỏ hàng</button>
     </div>
 </div>
