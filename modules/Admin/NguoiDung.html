@@ -361,159 +361,211 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-            <div class="container-fluid">
-
+            <div  class="container-fluid>
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Quản Lý Người Dùng</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                <div class=" d-sm-flex align-items-center justify-content-between mb-4
+            ">
+            <h1 class="h3 mb-0 text-gray-800">Quản Lý Người Dùng</h1>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <div class="flex-row d-flex justify-content-between align-self-stretch">
+                <div style="width: 100%; margin-left: 20px; margin-right: 20px">
+                    <table style="color: #000000" class="table table-hover table-borderless">
+                        <thead>
+                        <tr>
+                            <th scope="col">Số thứ tự</th>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Số điện thoại</th>
+                            <th scope="col">Chi tiết</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr class="table-danger">
+                            <th scope="row">1</th>
+                            <td> Nguyễn Văn Phong</td>
+                            <td>phong@gmail.com</td>
+                            <td>0323165966</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-warning">
+                            <th scope="row">2</th>
+                            <td> Nguyễn Thị Vân Anh</td>
+                            <td>vananh@gmail.com</td>
+                            <td>0321665976</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-danger">
+                            <th scope="row">3</th>
+                            <td> Trịnh Thị Phương Vi</td>
+                            <td>vivi@gmail.com</td>
+                            <td>0321646522</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-warning">
+                            <th scope="row">4</th>
+                            <td> Trần Thị Tứ Linh</td>
+                            <td>linh@gmail.com</td>
+                            <td>0323164997</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-danger">
+                            <th scope="row">5</th>
+                            <td> Nguyễn Phương Hằng</td>
+                            <td>hang@gmail.com</td>
+                            <td>0323164927</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-warning">
+                            <th scope="row">6</th>
+                            <td>Phan Thị Thu Hà</td>
+                            <td>ha@gmail.com</td>
+                            <td>0326479562</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-danger">
+                            <th scope="row">7</th>
+                            <td>Nguyễn Hoàng Long</td>
+                            <td>phong9402@gmail.com</td>
+                            <td>0321497748</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-warning">
+                            <th scope="row">8</th>
+                            <td>Trần Gia Bảo</td>
+                            <td>bao@gmail.com</td>
+                            <td>0321647979</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-danger">
+                            <th scope="row">9</th>
+                            <td>Nguyễn Ngọc Hạnh</td>
+                            <td>bao@gmail.com</td>
+                            <td>0323164792</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-warning">
+                            <th scope="row">10</th>
+                            <td>Nguyễn Nguyên</td>
+                            <td>nguyen@gmail.com</td>
+                            <td>0323164479</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm px-3">
+                                    <span>Xem</span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table style="color: #000000" class="table table-hover table-borderless">
-                    <thead>
-                    <tr>
-                        <th scope="col">Số thứ tự</th>
-                        <th scope="col">Tên</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Số điện thoại</th>
-                        <th scope="col">Chi tiết</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                <div style="margin-top: 3.2%">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div
+                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                            <div class="dropdown no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                     aria-labelledby="dropdownMenuLink">
+                                    <div class="dropdown-header">Tác động:</div>
+                                    <a class="dropdown-item" href="#">Chỉnh sửa</a>
+                                    <a class="dropdown-item" href="#">Xóa tài khoản</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Body -->
+                        <div style="min-height: 490px; width: 23rem" class="card-body">
+                                <canvas id="myAreaChart"></canvas>
+                                    <img class="card-img-top" src="..." alt="Card image cap">
+                                    <div class="">
+                                        <h5 class="card-title">Nguyễn Văn Phong</h5>
+                                        <div class="d-flex flex-row">
+                                        <p style="font-weight: bold">Email: </p>
+                                            <p> phong@gmail.com</p>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <p style="font-weight: bold">Ngày sinh: </p>
+                                            <p>phong@gmail.com</p>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <p style="font-weight: bold">Số điện thoại: </p>
+                                            <p>03251562651</p>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <p style="font-weight: bold">Mô tả sơ lược: </p>
+                                            <p>ạndnwkmal</p>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <p style="font-weight: bold">Số lượng sản phẩm đã mua: </p>
+                                            <p>45</p>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <tr class="table-danger">
-                        <th scope="row">1</th>
-                        <td> Nguyễn Văn Phong</td>
-                        <td>phong@gmail.com</td>
-                        <td>0323165966</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="table-warning">
-                        <th scope="row">2</th>
-                        <td> Nguyễn Thị Vân Anh</td>
-                        <td>vananh@gmail.com</td>
-                        <td>0321665976</td>
-                        <td>
-                            <button type="button" class="btn btn-success btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="/lib/jquery.min.js"></script>
+        <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
-                    <tr class="table-danger">
-                        <th scope="row">3</th>
-                        <td> Trịnh Thị Phương Vi</td>
-                        <td>vivi@gmail.com</td>
-                        <td>0321646522</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="table-warning">
-                        <th scope="row">4</th>
-                        <td> Trần Thị Tứ Linh</td>
-                        <td>linh@gmail.com</td>
-                        <td>0323164997</td>
-                        <td>
-                            <button type="button" class="btn btn-success btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
+        <!-- Core plugin JavaScript-->
+        <script src="/lib/jquery-easing/jquery.easing.min.js"></script>
 
-                    <tr class="table-danger">
-                        <th scope="row">5</th>
-                        <td> Nguyễn Phương Hằng</td>
-                        <td>hang@gmail.com</td>
-                        <td>0323164927</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="table-warning">
-                        <th scope="row">6</th>
-                        <td>Phan Thị Thu Hà</td>
-                        <td>ha@gmail.com</td>
-                        <td>0326479562</td>
-                        <td>
-                            <button type="button" class="btn btn-success btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
+        <!-- Custom scripts for all pages-->
+        <script src="/js/sb-admin-2.min.js"></script>
 
-                    <tr class="table-danger">
-                        <th scope="row">7</th>
-                        <td>Nguyễn Hoàng Long</td>
-                        <td>phong9402@gmail.com</td>
-                        <td>0321497748</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="table-warning">
-                        <th scope="row">8</th>
-                        <td>Trần Gia Bảo</td>
-                        <td>bao@gmail.com</td>
-                        <td>0321647979</td>
-                        <td>
-                            <button type="button" class="btn btn-success btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
+        <!-- Page level plugins -->
+        <script src="/vendor/chart.js/Chart.min.js"></script>
 
-                    <tr class="table-danger">
-                        <th scope="row">9</th>
-                        <td>Nguyễn Ngọc Hạnh</td>
-                        <td>bao@gmail.com</td>
-                        <td>0323164792</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="table-warning">
-                        <th scope="row">10</th>
-                        <td>Nguyễn Nguyên</td>
-                        <td>nguyen@gmail.com</td>
-                        <td>0323164479</td>
-                        <td>
-                            <button type="button" class="btn btn-success btn-sm px-3">
-                                <span>Xem</span>
-                            </button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-
-
-                <!-- Bootstrap core JavaScript-->
-                <script src="/lib/jquery.min.js"></script>
-                <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
-
-                <!-- Core plugin JavaScript-->
-                <script src="/lib/jquery-easing/jquery.easing.min.js"></script>
-
-                <!-- Custom scripts for all pages-->
-                <script src="/js/sb-admin-2.min.js"></script>
-
-                <!-- Page level plugins -->
-                <script src="/vendor/chart.js/Chart.min.js"></script>
-
-                <!-- Page level custom scripts -->
-                <script src="/js/demo/chart-area-demo.js"></script>
-                <script src="/js/demo/chart-pie-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="/js/demo/chart-area-demo.js"></script>
+        <script src="/js/demo/chart-pie-demo.js"></script>
 </body>
 </html>
