@@ -33,7 +33,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
                     <div class="card p-3">
                         <div style="display: flex; align-items: center; flex-direction: column">
                             <div style="flex-direction: row" class="TenNguoiBan">
-                                <img src="/img/no_avatar.png"/>
+                                <div class="avatar-wrapper">
+                                    <img class="profile-pic" src="/img/no_avatar.png" />
+                                    <div class="upload-button">
+                                        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                                    </div>
+                                    <input class="file-upload" type="file" accept="image/*"/>
+                                </div>
                                 Tên shop
                             </div>
                             <div style="color: #ffffff;margin-left: 3px; display: flex; flex-direction: row;width: 250px;  justify-content: space-evenly; margin-bottom: 10px;">

@@ -22,7 +22,14 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
         <div class="KhungChung">
             <aside class="MucTuyChon">
                 <div class="TenNguoiDung">
-                    <img src="/img/no_avatar.png"/>
+                    <div class="avatar-wrapper">
+                        <img class="profile-pic" src="/img/no_avatar.png" />
+                        <div class="upload-button">
+                            <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                        </div>
+                        <input class="file-upload" type="file" accept="image/*"/>
+                    </div>
+<!--                    <img src="/img/no_avatar.png"/>-->
                     <div class="info">
                         Tài khoản
                         <b></b>
@@ -104,6 +111,29 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php';
 ?>
+<script>
+    $(document).ready(function() {
 
+        var readURL = function(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.profile-pic').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(".file-upload").on('change', function(){
+            readURL(this);
+        });
+
+        $(".upload-button").on('click', function() {
+            $(".file-upload").click();
+        });
+    });
+</script>
 </body>
 </html>
