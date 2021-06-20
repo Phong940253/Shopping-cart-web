@@ -11,6 +11,7 @@ class DatabaseConnector
         $port = 3306;
         try {
             $this->dbConnection = new mysqli($hostName, $userName, $passWord, $databaseName, $port);
+            $this->dbConnection->set_charset("utf-8");
         } catch (Exception $e) {
             exit($e->getMessage());
         }

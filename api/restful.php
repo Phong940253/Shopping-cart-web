@@ -17,7 +17,12 @@ class restful_api
     {
         header($this->_build_http_header_string($status_code));
         header("Content-Type: application/json");
-        echo json_encode($data);
+//        $data = mb_convert_encoding($data, 'UTF-8', 'UTF-8');
+        $json = json_encode($data , JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE);
+        if ($json)
+            echo $json;
+        else
+            echo json_last_error_msg();
         die();
 
     }
@@ -148,6 +153,24 @@ class restful_api
             $this->response(500, $this->res);
         }
         $this->response(200, $this->res);
+    }
+
+    public static function convert_from_latin1_to_utf8_recursively($dat)
+    {
+        if (is_string($dat)) {
+            return utf8_encode($dat);
+        } elseif (is_array($dat)) {
+            $ret = [];
+            foreach ($dat as $i => $d) $ret[ $i ] = self::convert_from_latin1_to_utf8_recursively($d);
+
+            return $ret;
+        } elseif (is_object($dat)) {
+            foreach ($dat as $i => $d) $dat->$i = self::convert_from_latin1_to_utf8_recursively($d);
+
+            return $dat;
+        } else {
+            return $dat;
+        }
     }
 }
 ?>
