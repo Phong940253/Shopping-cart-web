@@ -3,8 +3,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 ?>
 <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
 <script src="/js/publicFunction.js"></script>
-<div class="header">
-    <div class="container">
+<div class="header-head">
+    <div class="container-header">
         <div class="middle_wrap">
             <div class="middle_left_container">
                 <div class="logo_menu">

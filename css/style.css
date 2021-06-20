@@ -21,15 +21,15 @@ html {
 }img {
     max-width: 100%;
 }
-.header {
+.header-head {
     position: relative;
     background: rgb(1, 127, 255);
     z-index: 999;
 }
-.header * {
+.header-head * {
     letter-spacing: normal;
 }
-.container {
+.container-header {
     width: 100%;
     padding-left: 4%;
     padding-right: 4%;

@@ -8,12 +8,14 @@
 
     <title>Trang chủ</title>
 <!--    <meta name="google-signin-client_id" content="684006131040-71e176oqhcvps4omhe3c6sc02qppnaal.apps.googleusercontent.com">-->
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="lib/jquery.min.js"></script>
-    <script src="lib/slick/slick.js"></script>
-    <script src="js/serviceworker.js"></script>
-    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/slick/slick.js"></script>
+    <script src="/js/serviceworker.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/lib/slick/slick-theme.css"/>
+    <link href="/vendor/components/font-awesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,12 +38,12 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
 </script>
 
 
-<div class="slick-slider">
-    <div><h3>1</h3></div>
-    <div><h3>2</h3></div>
-    <div><h3>3</h3></div>
-    <div><h3>4</h3></div>
-    <div><h3>5</h3></div>
+<div class="slick-slider bg-dark w-75" style="height: 125px;">
+    <div><h4 class="p-0"><img src="/img/poster0.png"></h4></div>
+    <div><h4 class="p-0"><img src="/img/poster1.png"></h4></div>
+    <div><h4 class="p-0"><img src="/img/poster2.png"></h4></div>
+    <div><h4 class="p-0"><img src="/img/poster3.png"></h4></div>
+    <div><h4 class="p-0"><img src="/img/poster4.png"></h4></div>
 </div>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php';
@@ -51,6 +53,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php';
 //    $Database = new DatabaseConnector();
 //    echo "connect success";
 //    ?>
+<script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
