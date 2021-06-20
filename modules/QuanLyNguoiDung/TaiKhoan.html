@@ -56,7 +56,7 @@
         </div>
         <div class="Khung-form">
             <label class="input-label">Giới tính: </label>
-            <select id="gender" class="Khung-dien" name="calc_shipping_provinces" required="">
+            <select id="gender" class="Khung-dien" name="gender" required="">
                 <option value="0">Nam</option>
                 <option value="1">Nữ</option>
             </select>
@@ -65,7 +65,7 @@
             <label class="input-label">Số điện thoại: </label>
 
                <span class="input input--shoko">
-          <input class="input__field input__field--shoko" type="text" id="mobile"/>
+          <input class="input__field input__field--shoko" type="text" id="mobile" name="mobile"/>
           <label class="input__label input__label--shoko" for="input-4">
             <span class="input__label-content input__label-content--shoko">Nhập số điện thoại của bạn</span>
           </label>
@@ -81,7 +81,7 @@
             <label class="input-label">Email: </label>
 
                <span class="input input--shoko">
-          <input class="input__field input__field--shoko" type="text" id="email"/>
+          <input class="input__field input__field--shoko" type="text" id="email" name="email"/>
           <label class="input__label input__label--shoko" for="input-4">
             <span class="input__label-content input__label-content--shoko">Nhập email của bạn</span>
           </label>
@@ -105,7 +105,7 @@
                         style="min-height: 100px"
                         placeholder="Mô tả sơ lược về bạn như sở thích, tính cách, gu thời trang v.v..."
                         type="text"
-                        name="TenTK"
+                        name="intro"
                         maxlength="128"
                         class="Khung-dien"
                         value=""
@@ -114,7 +114,7 @@
         </div>
         <div style="justify-content: space-evenly" class="Khung-form">
             <button  class="custom-btn btn-7"><span>Thêm ảnh</span></button>
-            <button class="custom-btn btn-7" id="update"><span>Cập nhật</span></button>
+            <button class="custom-btn btn-7" id="update" name="update"><span>Cập nhật</span></button>
         </div>
     </form>
 </div>
