@@ -1,26 +1,26 @@
 html {
     font-family: Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+    Helvetica,
+    Arial,
+    sans-serif;
     font-size: 14px;
 }body {
-    margin: 0px;
-    line-height: 1.15;
-    text-size-adjust: 100%;
-}body {
-    overflow-x: hidden;
-}body {
-    display: block;
-}*,
-::before,
-::after {
-    box-sizing: border-box;
-}a {
-    text-decoration: none;
-}img {
-    max-width: 100%;
-}
+     margin: 0px;
+     line-height: 1.15;
+     text-size-adjust: 100%;
+ }body {
+      overflow-x: hidden;
+  }body {
+       display: block;
+   }*,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }a {
+         text-decoration: none;
+     }img {
+          max-width: 100%;
+      }
 .header-head {
     position: relative;
     background: rgb(1, 127, 255);
@@ -112,18 +112,18 @@ html {
     flex: 1 1 0%;
     outline: none;
 }button,
-input {
-    overflow: visible;
-}button,
-input,
-optgroup,
-select,
-textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0px;
-}
+ input {
+     overflow: visible;
+ }button,
+  input,
+  optgroup,
+  select,
+  textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0px;
+  }
 .form-search-button {
     cursor: pointer;
     border: 0px;
