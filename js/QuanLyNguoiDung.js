@@ -1,23 +1,38 @@
+const profilePerson = [
+  "firstName", "middleName", "lastName", "mobile", "email", "intro", "gender"
+]
+
+const replaceInput = (input) => {
+  if (input.val() != "") {
+    if (typeof (span.attr("value")) == "undefined") {
+      span.attr("value", span.html());
+    }
+    span.html("");
+  } else {
+    span.html(span.attr("value"));
+  }
+}
+
 const loadData = () => {
-  // $("#firstName")[0].text(user.firstName);
+  profilePerson.map((u,i) => {
+    $("#" + u).val(user[u]);
+    if(u != "gender" && u != "intro") {
+      const input = $("#" + u);
+      replaceInput(input);
+    }
+  })
 };
 
 $(document).ready(function() {
   $(".Khung-ben-phai").on("input", (e) => {
     const input = $(e.target);
     const span = $(e.target).next().children();
-    if (input.val() != "") {
-      if (typeof (span.attr("value")) == "undefined") {
-        span.attr("value", span.html());
-      }
-      span.html("");
-    } else {
-      span.html(span.attr("value"));
-    }
+    replaceInput(input);
   });
 
   $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html", () => {
-    loadData();
+    console.log(user);
+    process.then(() => {loadData()});
   });
   $(".ThongTinTuyChon li a[class!='active']").click((e) => {
     $(".ThongTinTuyChon li .active").toggleClass("active");
@@ -33,7 +48,7 @@ $(document).ready(function() {
   });
   $(".Thong-tin-tai-khoan").click(function() {
     $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html", () => {
-
+      loadData();
     });
   });
   $(".Quan-ly-don-hang").click(function() {
