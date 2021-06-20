@@ -1,8 +1,8 @@
 const profilePerson = [
-  "firstName", "middleName", "lastName", "mobile", "email", "intro", "gender"
-]
+  "firstName", "middleName", "lastName", "mobile", "email", "intro", "gender",
+];
 
-const replaceInput = (input) => {
+const replaceInput = (input, span) => {
   if (input.val() != "") {
     if (typeof (span.attr("value")) == "undefined") {
       span.attr("value", span.html());
@@ -11,28 +11,30 @@ const replaceInput = (input) => {
   } else {
     span.html(span.attr("value"));
   }
-}
+};
 
 const loadData = () => {
-  profilePerson.map((u,i) => {
+  profilePerson.map((u, i) => {
     $("#" + u).val(user[u]);
-    if(u != "gender" && u != "intro") {
+    if (u != "gender" && u != "intro") {
       const input = $("#" + u);
-      replaceInput(input);
+      const span = input.next().children();
+      replaceInput(input, span);
     }
-  })
+  });
 };
 
 $(document).ready(function() {
   $(".Khung-ben-phai").on("input", (e) => {
     const input = $(e.target);
     const span = $(e.target).next().children();
-    replaceInput(input);
+    replaceInput(input, span);
   });
 
   $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html", () => {
-    console.log(user);
-    process.then(() => {loadData()});
+    process.then(() => {
+      loadData();
+    });
   });
   $(".ThongTinTuyChon li a[class!='active']").click((e) => {
     $(".ThongTinTuyChon li .active").toggleClass("active");
@@ -66,6 +68,26 @@ $(document).ready(function() {
   // $(".PhanChung").on("click", ".btn-5", () => {
   //     $(".PhanChung").load("/")
   // })
+  $(".Khung-ben-phai").on("click", "#update", (e) => {
+    const form = new FormData();
+
+    profilePerson.map((u, i) => {
+      form.append(u, $("#" + u).val());
+    });
+    console.log(form);
+    const settings = {
+      "url": "localhost/api/user.php/edit",
+      "method": "POST",
+      "processData": false,
+      "mimeType": "multipart/form-data",
+      "contentType": false,
+      "data": form,
+    };
+
+    // $.ajax(settings).then((response) => {
+    //
+    // });
+  });
 });
 
 
