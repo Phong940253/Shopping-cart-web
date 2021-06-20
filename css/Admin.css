@@ -24,7 +24,7 @@ body {
 
 .sidebar {
     display: flex;
-    flex: 1.5;
+    flex: 1.8;
     height: 100%;
     background: #4e73df;
     z-index: 100;
@@ -303,7 +303,6 @@ body {
 
 .home-section {
     display: flex;
-    background: #E4E9F7;
     flex: 9;
     transition: all 0.5s ease;
     justify-content: center;
@@ -321,7 +320,6 @@ body {
 
  .home-content .bx-menu,
  .home-content .text {
-    color: #11101d;
     font-size: 35px;
 }
 
@@ -396,4 +394,9 @@ body {
     flex: 9;
     display: flex;
     flex-direction: column;
+
+    background: #f8f9fc;
+}
+.shadow {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
 }
