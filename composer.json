@@ -7,6 +7,8 @@
         "ext-json": "*",
         "firebase/php-jwt": "^5.2",
       "ext-mysqli": "*",
-      "ext-openssl": "*"
+      "ext-openssl": "*",
+        "components/font-awesome": "^5.15",
+        "twbs/bootstrap": "4.1.3"
     }
 }
