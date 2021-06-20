@@ -1,9 +1,14 @@
 <div class="product-card m-3">
     <div class="logo-cart">
-        <!--<img src="images/logo.jpg" alt="logo">-->
+
         <i class='bx bx-shopping-bag'></i>
     </div>
     <div class="main-images">
+        <?php
+        echo "<img id='blue' class='blue active' src='{$_POST['image']}' alt='logo'>";
+        echo "<img id='pink' class='pink' src='{$_POST['image']}' alt='logo'>";
+        echo "<img id='yellow' class='yellow' src='{$_POST['image']}' alt='logo'>";
+        ?>
         <!--<img id="blue" class="blue active" src="images/blue.png" alt="blue">-->
         <!--<img id="pink" class="pink" src="images/pink.png" alt="blue">-->
         <!--<img id="yellow" class="yellow" src="images/yellow.png" alt="blue">-->
@@ -39,7 +44,7 @@
         <div class="price">
             <span class="price_num">
                 <?php
-                $_POST['price'];
+                echo $_POST['price'];
                 ?>
             </span>
             <span class="price_letter">Nine dollar only</span>

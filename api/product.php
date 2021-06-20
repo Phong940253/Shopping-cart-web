@@ -15,6 +15,7 @@ class product extends restful_api
         "title" => "",
         "metaTitle" => "",
         "slug" => "",
+        "summary" => "",
         "type" => "",
         "sku" => "",
         "price" => "",

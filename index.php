@@ -45,8 +45,11 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
         <div><h4 class="p-0"><img src="/img/poster3.png"></h4></div>
         <div><h4 class="p-0"><img src="/img/poster4.png"></h4></div>
     </div>
-    <div class="list-product m-3 d-flex flex-row flex-wrap justify-content-center">
+    <div class="m-3">
+        <div class="m-3">GỢI Ý HÔM NAY</div>
+        <div class="list-product d-flex flex-row flex-wrap justify-content-center">
 
+        </div>
     </div>
     <script src="/js/home.js">
     </script>
