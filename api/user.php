@@ -92,6 +92,7 @@ class user extends restful_api
             }
             if (is_null($this->params["id"])) {
                 $this->res['data'] = $check[1];
+                $this->res['success'] = true;
                 $this->response(200, $this->res);
             } else
                 $query = "select * from user where id = '{$this->params['id']}'";
@@ -124,15 +125,12 @@ class user extends restful_api
             $dem = 0;
             foreach ($this->params as $key => $value) {
                 if (!is_null($value)) {
-                    if ($key != "id") {
+                    if ($key != "id" || ($key == "birthdaytime" && $value == "")) {
                         if ($key == "admin" || $key == "vendor") {
-                            $query .= " {
-                    $key}={
-                    $value},";
+                            $query .= " {$key}={$value},";
                             $dem++;
                         } else {
-                            $query .= " {
-                    $key}='{$value}',";
+                            $query .= " {$key}='{$value}',";
                             $dem++;
                         }
                     }

@@ -1,7 +1,6 @@
 const profilePerson = [
-  "firstName", "middleName", "lastName", "mobile", "email", "intro", "gender",
+  "firstName", "middleName", "lastName", "mobile", "email", "intro", "gender", "birthdaytime",
 ];
-
 const replaceInput = (input, span) => {
   if (input.val() != "") {
     if (typeof (span.attr("value")) == "undefined") {
@@ -15,8 +14,9 @@ const replaceInput = (input, span) => {
 
 const loadData = () => {
   profilePerson.map((u, i) => {
+    console.log(u, user[u]);
     $("#" + u).val(user[u]);
-    if (u != "gender" && u != "intro") {
+    if (u != "gender" && u != "intro" && u != "birthdaytime") {
       const input = $("#" + u);
       const span = input.next().children();
       replaceInput(input, span);
@@ -50,7 +50,26 @@ $(document).ready(function() {
   });
   $(".Thong-tin-tai-khoan").click(function() {
     $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/TaiKhoan.html", () => {
-      loadData();
+      const form = new FormData();
+      form.append("jwt", getCookie("jwt"));
+
+      const settings = {
+        "url": "/api/user.php/get",
+        "method": "POST",
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form,
+      };
+
+      $.ajax(settings).then((reponse) => {
+        const data = JSON.parse(reponse);
+        if (data.success) {
+          user = data.data;
+          console.log("hello");
+          loadData();
+        }
+      });
     });
   });
   $(".Quan-ly-don-hang").click(function() {
@@ -68,15 +87,15 @@ $(document).ready(function() {
   // $(".PhanChung").on("click", ".btn-5", () => {
   //     $(".PhanChung").load("/")
   // })
-  $(".Khung-ben-phai").on("click", "#update", (e) => {
-    const form = new FormData();
-
-    profilePerson.map((u, i) => {
-      form.append(u, $("#" + u).val());
-    });
-    console.log(form);
+  $(".Khung-ben-phai").on("submit", "#UpdateForm", (e) => {
+    e.preventDefault();
+    const form = new FormData($("#UpdateForm")[0]);
+    form.append("id", user.id);
+    // profilePerson.map((u, i) => {
+    //   form.append(u, $("#" + u).val());
+    // });
     const settings = {
-      "url": "localhost/api/user.php/edit",
+      "url": "/api/user.php/edit",
       "method": "POST",
       "processData": false,
       "mimeType": "multipart/form-data",
@@ -84,9 +103,14 @@ $(document).ready(function() {
       "data": form,
     };
 
-    // $.ajax(settings).then((response) => {
-    //
-    // });
+    $.ajax(settings).then((response) => {
+      const data = JSON.parse(response);
+      if (data.success) {
+        alert("Cập nhật thành công");
+      } else {
+        alert("Cập nhật thất bại");
+      }
+    });
   });
 });
 
