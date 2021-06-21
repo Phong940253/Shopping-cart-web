@@ -1161,3 +1161,19 @@ body {
     background: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+.today-suggestion {
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.suggest-item {
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

@@ -46,7 +46,19 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
         <div><h4 class="p-0"><img src="/img/poster4.png"></h4></div>
     </div>
     <div class="m-3">
-        <div class="m-3">GỢI Ý HÔM NAY</div>
+        <div class="m-5">
+            <div class="box-shadow border today-suggestion d-flex justify-content-center">
+                    GỢI Ý HÔM NAY
+            </div>
+            <div class="d-flex flex-row ">
+                <div class="box-shadow suggest-item">
+                    Dành cho bạn
+                </div>
+                <div class="box-shadow suggest-item">
+                    Hàng mới
+                </div>
+            </div>
+        </div>
         <div class="list-product d-flex flex-row flex-wrap justify-content-center">
 
         </div>
