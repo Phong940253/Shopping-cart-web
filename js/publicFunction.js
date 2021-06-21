@@ -35,7 +35,7 @@ const loadDataForHeader = (reponse) => {
   const checkEmpty = (t) => {
     return (typeof t == "undefined" || t == null);
   };
-  $(".header-account-container").load("/modules/User/header-after-login.html", () => {
+  $(".header-account-container").load("/modules/User/header-after-login.php", {"admin": data.admin}, () => {
     if (checkEmpty(data.firstName) && checkEmpty(data.middleName) && checkEmpty(data.lastName)) {
       $(".account-label span").text("Chưa có tên");
     } else $(".account-label span").text(data.firstName + " " + data.middleName + " " + data.lastName);
