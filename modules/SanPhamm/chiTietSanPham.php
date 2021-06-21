@@ -245,7 +245,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
         </div>
     </div>
 </div>
-
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php';
+?>
 </scrip>
 </body>
 </html>
