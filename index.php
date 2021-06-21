@@ -34,6 +34,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
             autoplay: true,
             autoplaySpeed: 2000,
         });
+        $(".Quan-ly-don-hang").click(function() {
+            $(".Khung-ben-phai").load("/modules/QuanLyNguoiDung/QuanLyDonHang.html");
+        });
     });
 </script>
 
