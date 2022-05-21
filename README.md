@@ -25,7 +25,7 @@
   - Programming language: Php
 ---  
 # Database Architecture
- ![image](https://user-images.githubusercontent.com/40328498/169658830-95610a06-01cf-40c1-8743-1edb6e82ca0c.png)
+ ![image](https://github.com/Phong940253/Shopping-cart-web/blob/13149a26bc6083ee052c67fabaad9e09271770cb/database/Database%20Diagrams.png?raw=true)
   
 ---  
 # Dependency Management
